@@ -27,6 +27,8 @@ The public key infrastructure for the public
 
 ### [🛠 Development](docs/Development.md)
 
+### [📦 Deployment](docs/Deployment.md)
+
 ### [⚖️ License](https://www.gnu.org/licenses/gpl-3.0)
 
 **Copyright © 2019 certish.**
