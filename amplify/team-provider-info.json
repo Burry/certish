@@ -1,0 +1,14 @@
+{
+    "master": {
+        "awscloudformation": {
+            "AuthRoleName": "certish-master-20190830221949-authRole",
+            "UnauthRoleArn": "arn:aws:iam::233801002674:role/certish-master-20190830221949-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::233801002674:role/certish-master-20190830221949-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "certish-master-20190830221949-deployment",
+            "UnauthRoleName": "certish-master-20190830221949-unauthRole",
+            "StackName": "certish-master-20190830221949",
+            "StackId": "arn:aws:cloudformation:us-west-2:233801002674:stack/certish-master-20190830221949/92d2f7e0-cba6-11e9-8d80-0ac7c290a036"
+        }
+    }
+}
