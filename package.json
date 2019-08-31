@@ -6,12 +6,16 @@
     "repository": "github:Burry/certish",
     "author": "Grant Burry <grant@burry.me> (https://grantburry.com)",
     "license": "GPL-3.0+",
+    "keywords": [
+        "pki",
+        "x509"
+    ],
     "private": true,
     "scripts": {
         "eslint": "eslint",
         "lint": "npm-run-all 'eslint {@} --ignore-path .gitignore .' --",
         "lint:report": "npm-run-all 'lint --format html --output-file eslint-report.html {@}' --",
-        "test": "razzle test --env=jsdom --passWithNoTests",
+        "test": "jest --env=jsdom --passWithNoTests",
         "test:cover": "npm-run-all 'test --coverage {@}' --",
         "test:ci": "npm-run-all 'test:cover --ci {@}' --",
         "open-coverage": "open-cli coverage/lcov-report/index.html",
@@ -23,20 +27,19 @@
     "engines": {
         "node": ">=8"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "!(relay/build|coverage|node_modules)/**/!(*test).js": [
-            "prettier --write",
-            "eslint --fix",
-            "git add --force"
+    "babel": {
+        "presets": [
+            "next/babel"
         ],
-        "*.{json,md}": [
-            "prettier --write",
-            "git add --force"
+        "plugins": [
+            [
+                "styled-components",
+                {
+                    "ssr": true,
+                    "displayName": true,
+                    "preprocess": false
+                }
+            ]
         ]
     },
     "eslintConfig": {
@@ -167,30 +170,34 @@
     },
     "jest": {
         "collectCoverageFrom": [
-            "relay/src/**/*.js",
+            "**/*.js",
             "!**/node_modules/**"
         ],
-        "globals": {
-            "__DEV__": true
-        },
         "moduleFileExtensions": [
             "js",
             "json",
             "node"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "!(relay/build|coverage|node_modules)/**/!(*test).js": [
+            "prettier --write",
+            "eslint --fix",
+            "git add --force"
         ],
-        "reporters": [
-            "default",
-            [
-                "jest-junit",
-                {
-                    "outputDirectory": "relay/coverage",
-                    "outputName": "junit.xml"
-                }
-            ]
+        "*.{json,md}": [
+            "prettier --write",
+            "git add --force"
         ]
     },
     "dependencies": {
         "@zeit/next-css": "^1.0.1",
+        "aws-amplify": "^1.1.36",
         "grommet": "^2.7.7",
         "next": "9.0.5",
         "react": "16.9.0",
