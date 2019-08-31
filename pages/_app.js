@@ -18,7 +18,7 @@
 import React from 'react';
 import NextApp from 'next/app';
 import { Helmet } from 'react-helmet';
-import { Box, Grommet } from 'grommet';
+import { Box, Grommet, Text } from 'grommet';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../components/styles/metropolis.css';
@@ -108,6 +108,17 @@ class App extends NextApp {
                         {`::selection{${textSelectionStyle}}::-moz-selection{${textSelectionStyle}}`}
                     </style>
                 </Helmet>
+                <Box
+                    as="noscript"
+                    fill
+                    background="brand"
+                    alignContent="center"
+                    pad="small"
+                >
+                    <Text textAlign="center" weight="bold">
+                        Please enable JavaScript to use certish.
+                    </Text>
+                </Box>
                 <Box fill>
                     <Header />
                     <Box

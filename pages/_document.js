@@ -16,6 +16,7 @@
  */
 
 import NextDocument, { Head, Main, NextScript } from 'next/document';
+import { shape } from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { ServerStyleSheet } from 'styled-components';
 
@@ -36,7 +37,7 @@ class Document extends NextDocument {
             return {
                 ...initialProps,
                 // https://github.com/nfl/react-helmet#server-usage
-                helmet: Helmet.rewind(),
+                helmet: Helmet.renderStatic(),
                 styles: (
                     <>
                         {initialProps.styles}
@@ -50,19 +51,16 @@ class Document extends NextDocument {
     }
 
     render() {
-        const { helmet } = this.props;
+        const {
+            helmet: { htmlAttributes, bodyAttributes, ...helmet }
+        } = this.props;
         return (
             // eslint-disable-next-line jsx-a11y/html-has-lang
-            <html {...helmet.htmlAttributes.toComponent()}>
+            <html {...htmlAttributes.toComponent()}>
                 <Head>
-                    {Object.keys(helmet)
-                        .filter(el => !el.endsWith('Attributes'))
-                        .map(el => helmet[el].toComponent())}
+                    {Object.keys(helmet).map(el => helmet[el].toComponent())}
                 </Head>
-                <body {...helmet.bodyAttributes.toComponent()}>
-                    <noscript>
-                        Please enable JavaScript to use certish.
-                    </noscript>
+                <body {...bodyAttributes.toComponent()}>
                     <Main />
                     <NextScript />
                 </body>
@@ -70,5 +68,9 @@ class Document extends NextDocument {
         );
     }
 }
+
+Document.propTypes = {
+    helmet: shape({}).isRequired
+};
 
 export default Document;
