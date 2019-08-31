@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> matches snapshot 1`] = `
+<div
+  className="StyledBox-sc-13pk1d4-0 eUovH"
+>
+  <h1
+    className="StyledHeading-sc-1rdh4aw-0 WNcgo"
+  >
+    Drop to 
+    sign
+  </h1>
+  <div
+    className="StyledBox-sc-13pk1d4-0 fRiEh"
+  >
+    <span
+      className="StyledText-sc-1sadyjn-0 fWSbXS"
+    >
+      Or 
+    </span>
+    <button
+      className="StyledButton-sc-323bzc-0 hsEINM"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      type="button"
+    >
+      Choose File
+    </button>
+    <button
+      className="StyledButton-sc-323bzc-0 hsEINM"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      type="button"
+    >
+      Paste Text
+    </button>
+  </div>
+  <span
+    className="StyledText-sc-1sadyjn-0 gNZQxf"
+    size="small"
+  >
+    The contents of your data are never sent to certish.
+  </span>
+</div>
+`;

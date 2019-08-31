@@ -25,7 +25,7 @@ const WideParagraph = props => <Paragraph fill {...props} />;
 
 const Privacy = () => (
     <Box>
-        <Heading margin={{ top: 'small', bottom: 'small' }}>Privacy</Heading>
+        <Heading margin={{ bottom: 'small' }}>Privacy</Heading>
         <WideParagraph>
             We believe that your data is your business. When you send data to
             certish for signing or verification, that data never leaves your
@@ -37,9 +37,9 @@ const Privacy = () => (
         </WideParagraph>
         <ol>
             <li>
-                We securely send your browser a private cryptographic key. If
-                you&apos;re signed in, we&apos;ll send a key from your account,
-                otherwise we&apos;ll generate one for you on the fly.
+                If you&apos;re signed in and have an associated private key,
+                we&apos;ll securely send your private key to your browser,
+                otherwise your browser will generate one for you on the fly.
             </li>
             <li>
                 Your browser uses your target data and the private key to

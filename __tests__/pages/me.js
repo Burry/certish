@@ -15,18 +15,16 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import Router from 'next/router';
+/* eslint-env jest */
 
-const Index = () => null;
+import React from 'react';
+import renderer from 'react-test-renderer';
+import Page from '../../pages/me';
 
-Index.getInitialProps = ({ res }) => {
-    if (res) {
-        res.writeHead(302, {
-            Location: '/sign'
-        });
-        res.end();
-    } else Router.push('/sign');
-    return {};
-};
-
-export default Index;
+describe('/me', () => {
+    it('matches snapshot', () => {
+        const page = renderer.create(<Page />);
+        const tree = page.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+});

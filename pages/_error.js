@@ -34,7 +34,7 @@ const friendlyError = statusCode => {
 
 const Error = ({ statusCode }) => (
     <Box justify="center" animation="fadeIn" fill pad={{ vertical: 'large' }}>
-        <Heading textAlign="center">
+        <Heading alignSelf="center" textAlign="center">
             {friendlyError(statusCode) || 'An error occurred'}
         </Heading>
     </Box>

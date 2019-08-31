@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/terms matches snapshot 1`] = `
+<div
+  className="StyledBox-sc-13pk1d4-0 IRSNj"
+>
+  <h1
+    className="StyledHeading-sc-1rdh4aw-0 bHoSRH"
+  >
+    Terms
+  </h1>
+  <span
+    className="StyledText-sc-1sadyjn-0 fWSbXS"
+  >
+    TBD
+  </span>
+</div>
+`;

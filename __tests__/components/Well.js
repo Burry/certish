@@ -15,18 +15,16 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import Router from 'next/router';
+/* eslint-env jest */
 
-const Index = () => null;
+import React from 'react';
+import renderer from 'react-test-renderer';
+import Component from '../../components/Well';
 
-Index.getInitialProps = ({ res }) => {
-    if (res) {
-        res.writeHead(302, {
-            Location: '/sign'
-        });
-        res.end();
-    } else Router.push('/sign');
-    return {};
-};
-
-export default Index;
+describe('<Footer />', () => {
+    it('matches snapshot', () => {
+        const component = renderer.create(<Component verb="sign" />);
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+});

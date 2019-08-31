@@ -5,7 +5,7 @@ exports[`<Error /> with 500 error matches snapshot 1`] = `
   className="StyledBox-sc-13pk1d4-0 hZUuld"
 >
   <h1
-    className="StyledHeading-sc-1rdh4aw-0 bAMRUm"
+    className="StyledHeading-sc-1rdh4aw-0 ityOki"
   >
     Server error
   </h1>
@@ -17,7 +17,7 @@ exports[`<Error /> with unknown error matches snapshot 1`] = `
   className="StyledBox-sc-13pk1d4-0 hZUuld"
 >
   <h1
-    className="StyledHeading-sc-1rdh4aw-0 bAMRUm"
+    className="StyledHeading-sc-1rdh4aw-0 ityOki"
   >
     An error occurred
   </h1>

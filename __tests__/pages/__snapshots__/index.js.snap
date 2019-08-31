@@ -1,33 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`/ matches snapshot 1`] = `
-<div
-  className="StyledBox-sc-13pk1d4-0 hZUuld"
->
-  <h1
-    className="StyledHeading-sc-1rdh4aw-0 bAMRUm"
-  >
-    Drop to sign
-  </h1>
-  <div
-    className="StyledBox-sc-13pk1d4-0 lcgQAy"
-  >
-    <span
-      className="StyledText-sc-1sadyjn-0 fWSbXS"
-    >
-      Or 
-    </span>
-    <button
-      className="StyledButton-sc-323bzc-0 bznOZV"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
-      type="button"
-    >
-      Choose File
-    </button>
-  </div>
-</div>
-`;
+exports[`/ matches snapshot 1`] = `null`;

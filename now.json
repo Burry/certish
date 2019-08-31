@@ -1,0 +1,13 @@
+{
+    "version": 2,
+    "name": "certish",
+    "public": false,
+    "alias": ["certish.com", "www.certish.com", "www.certi.sh"],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "status": 301,
+            "headers": { "Location": "https://certi.sh/$1" }
+        }
+    ]
+}

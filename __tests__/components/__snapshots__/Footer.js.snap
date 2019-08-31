@@ -43,10 +43,11 @@ exports[`<Footer /> matches snapshot 1`] = `
     |
     <a
       className="StyledAnchor-sc-1rp7lwl-0 gMEZTg"
+      href="https://github.com/certish/certish"
       onBlur={[Function]}
-      onClick={[Function]}
       onFocus={[Function]}
-      onMouseEnter={[Function]}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       GitHub
     </a>

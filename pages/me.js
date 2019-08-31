@@ -15,18 +15,16 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import Router from 'next/router';
+import React from 'react';
+import { Box, Heading } from 'grommet';
 
-const Index = () => null;
+const Me = () => (
+    <Box>
+        <Heading margin={{ bottom: 'small' }}>Me</Heading>
+        <Heading level="2" margin={{ bottom: 'small' }}>
+            Signatures
+        </Heading>
+    </Box>
+);
 
-Index.getInitialProps = ({ res }) => {
-    if (res) {
-        res.writeHead(302, {
-            Location: '/sign'
-        });
-        res.end();
-    } else Router.push('/sign');
-    return {};
-};
-
-export default Index;
+export default Me;

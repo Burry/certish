@@ -15,18 +15,9 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import Router from 'next/router';
+import React from 'react';
+import Well from '../components/Well';
 
-const Index = () => null;
+const Verify = () => <Well verb="verify" />;
 
-Index.getInitialProps = ({ res }) => {
-    if (res) {
-        res.writeHead(302, {
-            Location: '/sign'
-        });
-        res.end();
-    } else Router.push('/sign');
-    return {};
-};
-
-export default Index;
+export default Verify;
