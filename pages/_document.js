@@ -54,6 +54,7 @@ class Document extends NextDocument {
         const {
             helmet: { htmlAttributes, bodyAttributes, ...helmet }
         } = this.props;
+
         return (
             // eslint-disable-next-line jsx-a11y/html-has-lang
             <html {...htmlAttributes.toComponent()}>

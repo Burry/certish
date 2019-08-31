@@ -16,6 +16,7 @@
  */
 
 import React from 'react';
+import { func, shape } from 'prop-types';
 import NextApp from 'next/app';
 import { Helmet } from 'react-helmet';
 import { Box, Grommet, Text } from 'grommet';
@@ -135,5 +136,10 @@ class App extends NextApp {
         );
     }
 }
+
+App.propTypes = {
+    Component: func.isRequired,
+    pageProps: shape({}).isRequired
+};
 
 export default App;
