@@ -15,10 +15,10 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import DocumentComponent from 'next/document';
+import NextDocument from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
-class Document extends DocumentComponent {
+class Document extends NextDocument {
     static async getInitialProps(ctx) {
         const sheet = new ServerStyleSheet();
         const originalRenderPage = ctx.renderPage;
@@ -30,7 +30,7 @@ class Document extends DocumentComponent {
                         sheet.collectStyles(<App {...props} />)
                 });
 
-            const initialProps = await Document.getInitialProps(ctx);
+            const initialProps = await NextDocument.getInitialProps(ctx);
 
             return {
                 ...initialProps,

@@ -30,8 +30,10 @@
         "deploy-backend": "amplify push",
         "build-frontend": "next build",
         "build": "npm-run-all deploy-backend build-frontend",
+        "now-build": "npm-run-all build",
         "start-dev": "next dev",
         "dev": "npm-run-all deploy-backend start-dev",
+        "now-dev": "npm-run-all dev",
         "start": "next start"
     },
     "engines": {
@@ -237,8 +239,8 @@
         "react": "16.9.0",
         "react-dom": "16.9.0",
         "react-helmet": "^5.2.1",
+        "sanitize.css": "^11.0.0",
         "styled-components": "^4.3.2",
-        "styled-normalize": "^8.0.6",
         "typeface-metropolis": "^0.0.74"
     },
     "devDependencies": {
