@@ -14,6 +14,7 @@
     "scripts": {
         "eslint": "eslint",
         "lint": "npm-run-all 'eslint {@} --ignore-path .gitignore .' --",
+        "lint:fix": "npm-run-all 'lint --fix {@}' --",
         "lint:report": "npm-run-all 'lint --format html --output-file eslint-report.html {@}' --",
         "test": "jest --env=jsdom --passWithNoTests",
         "test:cover": "npm-run-all 'test --coverage {@}' --",
@@ -45,6 +46,7 @@
     "eslintConfig": {
         "parser": "babel-eslint",
         "plugins": [
+            "notice",
             "prettier",
             "react"
         ],
@@ -103,6 +105,12 @@
                 {
                     "max": 2,
                     "maxEOF": 1
+                }
+            ],
+            "notice/notice": [
+                "error",
+                {
+                    "templateFile": "COPYRIGHT"
                 }
             ],
             "prefer-destructuring": [
@@ -185,7 +193,7 @@
         }
     },
     "lint-staged": {
-        "!(relay/build|coverage|node_modules)/**/!(*test).js": [
+        "!(.next|out|coverage|node_modules)/**/!(*test|aws-exports).js": [
             "prettier --write",
             "eslint --fix",
             "git add --force"
@@ -214,6 +222,7 @@
         "eslint-config-prettier": "^6.1.0",
         "eslint-plugin-import": "^2.18.2",
         "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-notice": "^0.8.9",
         "eslint-plugin-prettier": "^3.1.0",
         "eslint-plugin-react": "^7.14.3",
         "husky": "^3.0.4",
