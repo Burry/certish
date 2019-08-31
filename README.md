@@ -4,7 +4,7 @@
     </a>
     <br />
     <a href="https://certi.sh" target="_blank" alt="Version">
-        <img src="https://img.shields.io/github/package-json/v/Burry/certish?color=09f">
+        <img src="https://img.shields.io/github/package-json/v/Burry/certish?color=blue">
     </a>
     <a href="https://travis-ci.com/Burry/certish" target="_blank" alt="Build Status">
         <img src="https://travis-ci.com/Burry/certish.svg?branch=master" />
@@ -17,7 +17,7 @@
         <img src="https://david-dm.org/Burry/certish.svg" />
     </a>
     <a href="https://www.gnu.org/licenses/gpl-3.0" alt="License: GPL v3">
-        <img src="https://img.shields.io/github/license/Burry/certish?color=F00" />
+        <img src="https://img.shields.io/badge/license-GPL--3.0-orange" />
     </a>
 </h1>
 
