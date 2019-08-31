@@ -4,13 +4,13 @@
     </a>
     <br />
     <a href="https://certi.sh" target="_blank" alt="Version">
-        <img src="https://img.shields.io/github/package-json/v/Burry/certish">
+        <img src="https://img.shields.io/github/package-json/v/Burry/certish?color=09f">
     </a>
     <a href="https://travis-ci.com/Burry/certish" target="_blank" alt="Build Status">
         <img src="https://travis-ci.com/Burry/certish.svg?branch=master" />
     </a>
     <a href="https://codecov.io/gh/Burry/certish" target="_blank" alt="Code Coverage">
-    <img src="https://img.shields.io/codecov/c/gh/Burry/certish?token=c89dcbd6a67c4cc59ce6edfc926535fb">
+        <!-- <img src="https://img.shields.io/codecov/c/gh/Burry/certish" /> -->
         <img src="https://codecov.io/gh/Burry/certish/branch/master/graph/badge.svg" />
     </a>
     <a href="https://app.fossa.com/projects/custom%2B9027%2Fgithub.com%2FBurry%2Fcertish/refs/branch/master/dff2ce0a3f018065f83fa68504f7f04acae9fd7d/browse/dependencies" target="_blank" alt="Dependency Status">
