@@ -34,7 +34,8 @@
         "start-dev": "next dev",
         "dev": "npm-run-all deploy-backend start-dev",
         "now-dev": "npm-run-all dev",
-        "start": "next start"
+        "start": "next start",
+        "export": "next export"
     },
     "engines": {
         "node": ">=8"
