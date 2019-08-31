@@ -20,9 +20,9 @@ import { Helmet } from 'react-helmet';
 import { Box, Heading, Text } from 'grommet';
 
 const Terms = () => (
-    <Box>
+    <Box pad={{ horizontal: 'medium' }}>
         <Helmet title="Terms" />
-        <Heading margin={{ bottom: 'small' }}>Terms</Heading>
+        <Heading margin={{ top: 'none', bottom: 'small' }}>Terms</Heading>
         <Text>TBD</Text>
     </Box>
 );

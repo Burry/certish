@@ -20,30 +20,27 @@ import { string } from 'prop-types';
 import { Box, Button, Heading, Text } from 'grommet';
 
 const Well = ({ verb }) => (
-    <Box
-        justify="center"
-        alignSelf="center"
-        textAlign="center"
-        pad={{ vertical: 'large' }}
-    >
-        <Heading textAlign="center" margin="none">
-            Drop to {verb}
-        </Heading>
-        <Box
-            direction="row"
-            fill
-            align="center"
-            alignSelf="center"
-            justify="between"
-            margin={{ vertical: 'large' }}
-        >
-            <Text>Or </Text>
-            <Button primary label="Choose File" onClick={() => {}} />
-            <Button primary label="Paste Text" onClick={() => {}} />
+    <Box alignContent="center" className="expand-height">
+        <Box justify="center" alignSelf="center" textAlign="center">
+            <Heading as="div" alignSelf="center" margin="none">
+                Drop to {verb}
+            </Heading>
+            <Box
+                direction="row"
+                fill
+                align="center"
+                alignSelf="center"
+                justify="between"
+                margin={{ vertical: 'large' }}
+            >
+                <Text>or </Text>
+                <Button primary label="choose file" onClick={() => {}} />
+                <Button primary label="paste text" onClick={() => {}} />
+            </Box>
+            <Text size="small">
+                The contents of your data are never sent to certish.
+            </Text>
         </Box>
-        <Text size="small">
-            The contents of your data are never sent to certish.
-        </Text>
     </Box>
 );
 

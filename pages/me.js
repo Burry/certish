@@ -19,13 +19,15 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Box, Heading } from 'grommet';
 
+const TightHeading = props => (
+    <Heading margin={{ top: 'none', bottom: 'small' }} {...props} />
+);
+
 const Me = () => (
-    <Box>
+    <Box pad={{ horizontal: 'medium' }}>
         <Helmet title="Me" />
-        <Heading margin={{ bottom: 'small' }}>Me</Heading>
-        <Heading level="2" margin={{ bottom: 'small' }}>
-            Signatures
-        </Heading>
+        <TightHeading>Me</TightHeading>
+        <TightHeading level="2">Signatures</TightHeading>
     </Box>
 );
 

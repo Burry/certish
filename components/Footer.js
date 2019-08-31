@@ -32,7 +32,7 @@ const Footer = () => (
         direction="row"
         align="center"
         justify="between"
-        pad={{ horizontal: 'medium', vertical: 'medium' }}
+        pad="medium"
         style={{ zIndex: '1' }}
     >
         <FooterText>
@@ -40,15 +40,15 @@ const Footer = () => (
         </FooterText>
         <FooterText textAlign="end" as="div">
             <Link href="/privacy">
-                <FooterAnchor label="Privacy" />
+                <FooterAnchor label="privacy" />
             </Link>
             |
             <Link href="/terms">
-                <FooterAnchor label="Terms" />
+                <FooterAnchor label="terms" />
             </Link>
             |
             <FooterAnchor
-                label="GitHub"
+                label="code"
                 href="https://github.com/certish/certish"
                 target="_blank"
                 rel="noopener noreferrer"

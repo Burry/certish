@@ -25,13 +25,12 @@ const TightHeading = props => (
 const WideParagraph = props => <Paragraph fill {...props} />;
 
 const Privacy = () => (
-    <Box>
+    <Box pad={{ horizontal: 'medium' }}>
         <Helmet title="Privacy" />
-        <Heading margin={{ bottom: 'small' }}>Privacy</Heading>
+        <Heading margin={{ top: 'none', bottom: 'small' }}>Privacy</Heading>
         <WideParagraph>
-            We believe that your data is your business. When you send data to
-            certish for signing or verification, that data never leaves your
-            browser.
+            We believe that your data is your business. When use certish to sign
+            or verify data, the contents of that data never leave your browser.
         </WideParagraph>
         <TightHeading level={2}>Signing</TightHeading>
         <WideParagraph>

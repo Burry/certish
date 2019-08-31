@@ -23,6 +23,7 @@ import { Box, Grommet, Text } from 'grommet';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../components/styles/metropolis.css';
+import '../components/styles/full-height.css';
 
 const title = 'certish';
 const hostname = 'https://certi.sh';
@@ -49,7 +50,7 @@ class App extends NextApp {
         const { Component, pageProps } = this.props;
 
         return (
-            <Grommet theme={theme}>
+            <Grommet theme={theme} className="full-height">
                 <Helmet
                     defaultTitle={title}
                     titleTemplate={`%s » ${title}`}
@@ -106,7 +107,7 @@ class App extends NextApp {
                     <link rel="manifest" href="/static/site.webmanifest" />
                     {/* Text selection style */}
                     <style>
-                        {`::selection{${textSelectionStyle}}::-moz-selection{${textSelectionStyle}}`}
+                        {`body,html{margin:0;padding:0;}::selection{${textSelectionStyle}}::-moz-selection{${textSelectionStyle}}`}
                     </style>
                 </Helmet>
                 <Box
@@ -120,13 +121,15 @@ class App extends NextApp {
                         Please enable JavaScript to use certish.
                     </Text>
                 </Box>
-                <Box fill>
+                <Box fill flex className="expand-height">
                     <Header />
                     <Box
+                        fill
                         pad={{
-                            horizontal: 'medium',
                             bottom: 'large'
                         }}
+                        className="expand-height"
+                        role="main"
                     >
                         <Component {...pageProps} />
                     </Box>
