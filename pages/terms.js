@@ -16,10 +16,12 @@
  */
 
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Box, Heading, Text } from 'grommet';
 
 const Terms = () => (
     <Box>
+        <Helmet title="Terms" />
         <Heading margin={{ bottom: 'small' }}>Terms</Heading>
         <Text>TBD</Text>
     </Box>

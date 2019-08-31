@@ -16,6 +16,7 @@
  */
 
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Box, Heading, Paragraph } from 'grommet';
 
 const TightHeading = props => (
@@ -25,6 +26,7 @@ const WideParagraph = props => <Paragraph fill {...props} />;
 
 const Privacy = () => (
     <Box>
+        <Helmet title="Privacy" />
         <Heading margin={{ bottom: 'small' }}>Privacy</Heading>
         <WideParagraph>
             We believe that your data is your business. When you send data to

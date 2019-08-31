@@ -16,8 +16,14 @@
  */
 
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import Well from '../components/Well';
 
-const Sign = () => <Well verb="sign" />;
+const Sign = () => (
+    <>
+        <Helmet title="Sign" />
+        <Well verb="sign" />
+    </>
+);
 
 export default Sign;

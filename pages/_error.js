@@ -17,6 +17,7 @@
 
 import React from 'react';
 import { number } from 'prop-types';
+import { Helmet } from 'react-helmet';
 import { Box, Heading } from 'grommet';
 
 const friendlyError = statusCode => {
@@ -34,6 +35,7 @@ const friendlyError = statusCode => {
 
 const Error = ({ statusCode }) => (
     <Box justify="center" animation="fadeIn" fill pad={{ vertical: 'large' }}>
+        <Helmet title="Error" />
         <Heading alignSelf="center" textAlign="center">
             {friendlyError(statusCode) || 'An error occurred'}
         </Heading>

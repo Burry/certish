@@ -24,17 +24,15 @@ import Footer from '../components/Footer';
 import '../components/styles/metropolis.css';
 
 const title = 'certish';
+const hostname = 'https://certi.sh';
 const description = 'The public key infrastructure for the public';
-const brandColor = '#ff0000';
-const textSelectionStyle = `
-    background: ${brandColor};
-    color: #FFF;
-`;
+const brandColor = '#f00';
+const textSelectionStyle = `background:${brandColor};color:#FFF;`;
 const theme = {
     global: {
         colors: {
             brand: brandColor,
-            focus: '#ff5555'
+            focus: '#f55'
         },
         font: {
             family:
@@ -50,8 +48,12 @@ class App extends NextApp {
         const { Component, pageProps } = this.props;
 
         return (
-            <>
-                <Helmet defaultTitle={title} titleTemplate={`${title} » %s`}>
+            <Grommet theme={theme}>
+                <Helmet
+                    defaultTitle={title}
+                    titleTemplate={`%s » ${title}`}
+                    htmlAttributes={{ lang: 'en' }}
+                >
                     <meta charSet="utf-8" />
                     <meta name="application-name" content={title} />
                     <meta name="description" content={description} />
@@ -59,7 +61,6 @@ class App extends NextApp {
                         name="viewport"
                         content="width=device-width, initial-scale=1"
                     />
-                    <meta name="application-name" content={title} />
                     <meta name="apple-mobile-web-app-title" content={title} />
                     <meta name="theme-color" content={brandColor} />
                     <meta name="msapplication-TileColor" content={brandColor} />
@@ -71,14 +72,13 @@ class App extends NextApp {
                     <meta property="og:type" content="website" />
                     <meta property="og:title" content={title} />
                     <meta property="og:description" content={description} />
-                    <meta property="og:url" content="https://certi.sh" />
+                    <meta property="og:url" content={hostname} />
                     <meta property="og:image:width" content="1200" />
                     <meta property="og:image:height" content="630" />
                     <meta
                         property="og:image"
-                        content="/static/icons/open-graph.png"
+                        content={`${hostname}/static/open-graph.png`}
                     />
-                    {/* Icons */}
                     {[16, 32].map(size => {
                         const dimensions = `${size}x${size}`;
                         return (
@@ -105,31 +105,22 @@ class App extends NextApp {
                     <link rel="manifest" href="/static/site.webmanifest" />
                     {/* Text selection style */}
                     <style>
-                        {`
-                            ::selection {
-                                ${textSelectionStyle}
-                            }
-                            ::-moz-selection {
-                                ${textSelectionStyle}
-                            }
-                        `}
+                        {`::selection{${textSelectionStyle}}::-moz-selection{${textSelectionStyle}}`}
                     </style>
                 </Helmet>
-                <Grommet theme={theme}>
-                    <Box fill>
-                        <Header />
-                        <Box
-                            pad={{
-                                horizontal: 'medium',
-                                bottom: 'large'
-                            }}
-                        >
-                            <Component {...pageProps} />
-                        </Box>
-                        <Footer />
+                <Box fill>
+                    <Header />
+                    <Box
+                        pad={{
+                            horizontal: 'medium',
+                            bottom: 'large'
+                        }}
+                    >
+                        <Component {...pageProps} />
                     </Box>
-                </Grommet>
-            </>
+                    <Footer />
+                </Box>
+            </Grommet>
         );
     }
 }

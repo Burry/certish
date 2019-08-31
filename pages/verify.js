@@ -16,8 +16,14 @@
  */
 
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import Well from '../components/Well';
 
-const Verify = () => <Well verb="verify" />;
+const Verify = () => (
+    <>
+        <Helmet title="Verify" />
+        <Well verb="verify" />
+    </>
+);
 
 export default Verify;

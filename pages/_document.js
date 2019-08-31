@@ -15,7 +15,8 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import NextDocument from 'next/document';
+import NextDocument, { Head, Main, NextScript } from 'next/document';
+import { Helmet } from 'react-helmet';
 import { ServerStyleSheet } from 'styled-components';
 
 class Document extends NextDocument {
@@ -34,6 +35,8 @@ class Document extends NextDocument {
 
             return {
                 ...initialProps,
+                // https://github.com/nfl/react-helmet#server-usage
+                helmet: Helmet.rewind(),
                 styles: (
                     <>
                         {initialProps.styles}
@@ -44,6 +47,27 @@ class Document extends NextDocument {
         } finally {
             sheet.seal();
         }
+    }
+
+    render() {
+        const { helmet } = this.props;
+        return (
+            // eslint-disable-next-line jsx-a11y/html-has-lang
+            <html {...helmet.htmlAttributes.toComponent()}>
+                <Head>
+                    {Object.keys(helmet)
+                        .filter(el => !el.endsWith('Attributes'))
+                        .map(el => helmet[el].toComponent())}
+                </Head>
+                <body {...helmet.bodyAttributes.toComponent()}>
+                    <noscript>
+                        Please enable JavaScript to use certish.
+                    </noscript>
+                    <Main />
+                    <NextScript />
+                </body>
+            </html>
+        );
     }
 }
 
