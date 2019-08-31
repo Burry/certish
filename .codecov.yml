@@ -1,0 +1,5 @@
+ignore:
+    - __mocks__
+    - __tests__
+    - next.config.js
+    - jest.setup.js
