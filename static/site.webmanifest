@@ -1,0 +1,20 @@
+{
+    "name": "certish",
+    "short_name": "certish",
+    "icons": [
+        {
+            "src": "/static/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/static/icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ff0000",
+    "background_color": "#ffffff",
+    "start_url": "https://certi.sh",
+    "display": "standalone"
+}

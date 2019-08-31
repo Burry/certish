@@ -1,0 +1,211 @@
+{
+    "name": "certish",
+    "version": "0.1.0",
+    "description": "The public key infrastructure for the public",
+    "repository": "github:Burry/certish",
+    "license": "GPL-3.0+",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start"
+    },
+    "engines": {
+        "node": ">=8"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "!(relay/build|coverage|node_modules)/**/!(*test).js": [
+            "prettier --write",
+            "eslint --fix",
+            "git add --force"
+        ],
+        "*.{json,md}": [
+            "prettier --write",
+            "git add --force"
+        ],
+        "*.svg": [
+            "svgo --multipass --disable=removeViewBox --enable=removeDimensions",
+            "git add --force"
+        ]
+    },
+    "eslintConfig": {
+        "parser": "babel-eslint",
+        "plugins": [
+            "prettier",
+            "react"
+        ],
+        "extends": [
+            "eslint:recommended",
+            "airbnb",
+            "prettier",
+            "prettier/babel",
+            "prettier/react"
+        ],
+        "env": {
+            "node": true,
+            "es6": true,
+            "commonjs": true
+        },
+        "parserOptions": {
+            "ecmaVersion": 2020,
+            "sourceType": "module",
+            "allowImportExportEverywhere": false,
+            "codeFrame": false
+        },
+        "globals": {
+            "it": true,
+            "expect": true,
+            "describe": true,
+            "jest": true,
+            "document": true,
+            "test": true,
+            "window": true,
+            "getComputedStyle": true,
+            "fetch": true,
+            "WebSocket": true,
+            "alert": true,
+            "URLSearchParams": true,
+            "React": true
+        },
+        "rules": {
+            "function-paren-newline": [
+                "error",
+                "consistent"
+            ],
+            "import/prefer-default-export": 0,
+            "jsx-a11y/anchor-is-valid": 0,
+            "no-console": [
+                "error",
+                {
+                    "allow": [
+                        "warn",
+                        "error",
+                        "info"
+                    ]
+                }
+            ],
+            "no-multiple-empty-lines": [
+                "error",
+                {
+                    "max": 2,
+                    "maxEOF": 1
+                }
+            ],
+            "prefer-destructuring": [
+                "error",
+                {
+                    "VariableDeclarator": {
+                        "array": false,
+                        "object": true
+                    },
+                    "AssignmentExpression": {
+                        "array": false,
+                        "object": false
+                    }
+                },
+                {
+                    "enforceForRenamedProperties": false
+                }
+            ],
+            "prettier/prettier": "warn",
+            "quote-props": [
+                "error",
+                "consistent"
+            ],
+            "react/destructuring-assignment": 0,
+            "react/jsx-filename-extension": 0,
+            "react/jsx-first-prop-new-line": [
+                1,
+                "multiline"
+            ],
+            "react/jsx-max-props-per-line": [
+                1,
+                {
+                    "when": "multiline"
+                }
+            ],
+            "react/jsx-props-no-spreading": 0,
+            "react/no-find-dom-node": 0,
+            "react/react-in-jsx-scope": 0,
+            "react/sort-comp": 0,
+            "react/no-array-index-key": 0,
+            "import/no-extraneous-dependencies": [
+                "error",
+                {
+                    "packageDir": "."
+                }
+            ]
+        },
+        "settings": {
+            "import/resolver": {
+                "node": {
+                    "extensions": [
+                        ".js",
+                        ".jsx",
+                        ".ts",
+                        ".tsx"
+                    ]
+                }
+            }
+        }
+    },
+    "prettier": {
+        "printWidth": 80,
+        "tabWidth": 4,
+        "singleQuote": true
+    },
+    "jest": {
+        "collectCoverageFrom": [
+            "relay/src/**/*.js",
+            "!**/node_modules/**"
+        ],
+        "globals": {
+            "__DEV__": true
+        },
+        "moduleFileExtensions": [
+            "js",
+            "json",
+            "node"
+        ],
+        "reporters": [
+            "default",
+            [
+                "jest-junit",
+                {
+                    "outputDirectory": "relay/coverage",
+                    "outputName": "junit.xml"
+                }
+            ]
+        ]
+    },
+    "dependencies": {
+        "@zeit/next-css": "^1.0.1",
+        "grommet": "^2.7.7",
+        "next": "9.0.5",
+        "react": "16.9.0",
+        "react-dom": "16.9.0",
+        "react-helmet": "^5.2.1",
+        "styled-components": "^4.3.2",
+        "styled-normalize": "^8.0.6",
+        "typeface-metropolis": "^0.0.74"
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.0.3",
+        "eslint": "^6.3.0",
+        "eslint-config-airbnb": "^18.0.1",
+        "eslint-config-prettier": "^6.1.0",
+        "eslint-plugin-prettier": "^3.1.0",
+        "eslint-plugin-react": "^7.14.3",
+        "husky": "^3.0.4",
+        "jest": "^24.9.0",
+        "lint-staged": "^9.2.5",
+        "prettier": "^1.18.2",
+        "prop-types": "^15.7.2",
+        "svgo": "^1.3.0"
+    }
+}
