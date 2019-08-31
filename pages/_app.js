@@ -22,7 +22,8 @@ import { Box, Grommet } from 'grommet';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import 'sanitize.css';
-import 'typeface-metropolis';
+import '../components/styles/metropolis.css';
+// import 'typeface-metropolis';
 
 const title = 'certish';
 const description = 'The public key infrastructure for the public';
@@ -39,7 +40,7 @@ const theme = {
         },
         font: {
             family:
-                'Metropolis, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+                'Metropolis, "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
             size: '16px',
             height: '20px'
         }
