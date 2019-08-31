@@ -15,10 +15,10 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import Document from 'next/document';
+import DocumentComponent from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
-class CertishDocument extends Document {
+class Document extends DocumentComponent {
     static async getInitialProps(ctx) {
         const sheet = new ServerStyleSheet();
         const originalRenderPage = ctx.renderPage;
@@ -47,4 +47,4 @@ class CertishDocument extends Document {
     }
 }
 
-export default CertishDocument;
+export default Document;

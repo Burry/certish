@@ -32,7 +32,7 @@ const friendlyError = statusCode => {
     }
 };
 
-const CertishError = ({ statusCode }) => (
+const Error = ({ statusCode }) => (
     <Box justify="center" animation="fadeIn" fill pad={{ vertical: 'large' }}>
         <Heading textAlign="center">
             {friendlyError(statusCode) || 'An error occurred'}
@@ -40,15 +40,19 @@ const CertishError = ({ statusCode }) => (
     </Box>
 );
 
-CertishError.propTypes = {
-    statusCode: number.isRequired
+Error.propTypes = {
+    statusCode: number
 };
 
-CertishError.getInitialProps = ({ res, err }) => {
+Error.defaultProps = {
+    statusCode: undefined
+};
+
+Error.getInitialProps = ({ res, err }) => {
     let statusCode;
     if (res) statusCode = res.statusCode;
     else if (err) statusCode = err.statusCode;
     return { statusCode };
 };
 
-export default CertishError;
+export default Error;

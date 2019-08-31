@@ -4,7 +4,7 @@ certish requires an environment with [Node.js](https://nodejs.org), and we recom
 
 ## npm Dependencies
 
-Inside the project directory, install npm dependencies with `yarn` or `yarn install`. If you prefer to install with npm then run `npm install`.
+Inside the project directory, install npm dependencies with `yarn` or `yarn install`. If you prefer to install with npm, then run `npm install` instead.
 
 ## AWS Amplify
 
@@ -12,8 +12,8 @@ certish uses the [AWS Amplify Framework](https://aws.amazon.com/amplify/framewor
 
 1. Install the Amplify CLI globally: `npm install -g @aws-amplify/cli`
 2. Run `amplify configure`. You will be prompted to sign in to the AWS Console and create a new IAM user for the Amplify CLI. If your team has already provided you with Amplify IAM credentials, then close the browser prompts and input your IAM access key ID and secret access key.
-3. If your team has existing Amplify environments deployed, obtain `team-provider-info.json` from them and place it in the `amplify` directory before proceeding. AWS [recommends] leaving this file out of public repositories, and so if you're using one you can remove `team-provider-info.json` from `.gitignore` and commit it freely. Otherwise, you will need an external process to keep this file privately in sync among your team after every time the file is updated by the Amplify CLI.
-4. Run `amplify init` from within the project directory. Confirm that you want to use an existing environment, and then select the environment name that matches your checked-out git branch.
+3. If your team has existing Amplify environments deployed, obtain `team-provider-info.json` from them and place it in the `amplify` directory before proceeding. AWS [recommends](https://aws-amplify.github.io/docs/cli-toolchain/quickstart#sharing-projects-outside-the-team-) leaving this file out of public repositories, and so if you're using a private repo you can remove `team-provider-info.json` from `.gitignore` and commit it freely. Otherwise, you will need an external process to keep this file privately in sync among your team after every instance the file is updated by the Amplify CLI.
+4. Run `amplify init` from within the project directory. If you have `team-provider-info.json`, confirm that you want to use an existing environment, and then select the environment name that matches your checked-out git branch. Otherwise create a new environment, and name it after the branch.
 
 ### Deployment
 
@@ -25,35 +25,38 @@ Please familiarize yourself with the [concepts and workflow](https://aws-amplify
 
 ## Scripts
 
-In the project directory, you can run the following development scripts. If you prefer to use npm, then substitute `yarn` for `npm run`.
+In the project directory you can run the following development scripts. If you prefer to use npm, then substitute `yarn` for `npm run`.
 
 ### `yarn dev`
 
-Deploys AWS backend resources and runs the app in the development mode.
+Deploys AWS backend resources and starts the development server.
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
+The page will reload if you make edits. You will also see any lint errors in the console.
 
 ### `yarn build`
 
-Builds the app for production.
+Deploys AWS backend resources and builds the app for production.
 
 ### `yarn start`
 
-Deploys AWS backend resources and runs the compiled production app.
+Runs the compiled production app.
 
 ### `yarn lint`
 
-Runs [eslint](https://eslint.org) to detect code errors and bad formatting. You can use `yarn lint:fix` to automatically fix issues and `yarn lint:report` to generate a report of the lint run.
+Runs [ESLint](https://eslint.org) to detect code errors and bad formatting.
+
+You can use `yarn lint:fix` to automatically fix issues and `yarn lint:report` to generate a report of the lint run.
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.
+Runs tests with [Jest](https://jestjs.io).
+
+You can use `yarn test:watch` to run in interactive watch mode.
 
 See the Create React App section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `yarn coverage`
 
-Launches the test runner and generates a coverage report. Your browser will open the report once it's ready.
+Runs tests and generates a coverage report. Your browser will open the report once it's ready.

@@ -27,12 +27,12 @@ The public key infrastructure for the public
 
 ### [🛠 Development](docs/Development.md)
 
-### [⚖️ License](https://app.fossa.com/projects/custom%2B9027%2Fgithub.com%2FBurry%2Fcertish)
+### [⚖️ License](https://www.gnu.org/licenses/gpl-3.0)
 
 **Copyright © 2019 certish.**
 
 certish is free software: you can redistribute it and/or modify it under the terms of the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0) as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-certish is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+certish is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0) for more details.
 
 [![FOSSA Status](https://app.fossa.com/api/projects/custom%2B9027%2Fgithub.com%2FBurry%2Fcertish.svg?type=large)](https://app.fossa.com/projects/custom%2B9027%2Fgithub.com%2FBurry%2Fcertish?ref=badge_large)

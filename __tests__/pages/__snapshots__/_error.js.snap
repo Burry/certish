@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Error /> with 500 error matches snapshot 1`] = `
+<div
+  className="StyledBox-sc-13pk1d4-0 hZUuld"
+>
+  <h1
+    className="StyledHeading-sc-1rdh4aw-0 bAMRUm"
+  >
+    Server error
+  </h1>
+</div>
+`;
+
+exports[`<Error /> with unknown error matches snapshot 1`] = `
+<div
+  className="StyledBox-sc-13pk1d4-0 hZUuld"
+>
+  <h1
+    className="StyledHeading-sc-1rdh4aw-0 bAMRUm"
+  >
+    An error occurred
+  </h1>
+</div>
+`;

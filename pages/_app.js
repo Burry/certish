@@ -16,11 +16,11 @@
  */
 
 import React from 'react';
-import App from 'next/app';
+import AppComponent from 'next/app';
 import { Helmet } from 'react-helmet';
 import { Normalize } from 'styled-normalize';
 import { Box, Grommet } from 'grommet';
-import Nav from '../components/Nav';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 import 'typeface-metropolis';
 
@@ -45,7 +45,7 @@ const theme = {
     }
 };
 
-class CertishApp extends App {
+class App extends AppComponent {
     render() {
         const { Component, pageProps } = this.props;
 
@@ -120,7 +120,7 @@ class CertishApp extends App {
                 <Normalize />
                 <Grommet theme={theme}>
                     <Box fill>
-                        <Nav />
+                        <Header />
                         <Box
                             pad={{
                                 horizontal: 'medium',
@@ -137,4 +137,4 @@ class CertishApp extends App {
     }
 }
 
-export default CertishApp;
+export default App;
