@@ -2,12 +2,12 @@
     "version": 2,
     "name": "certish",
     "public": false,
-    "alias": ["certish.com", "www.certish.com", "www.certi.sh"],
+    "alias": ["www.certi.sh"],
     "routes": [
         {
             "src": "/(.*)",
             "status": 301,
-            "headers": { "Location": "https://google.com/$1" }
+            "headers": { "Location": "https://certi.sh/$1" }
         }
     ]
 }
