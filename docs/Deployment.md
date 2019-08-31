@@ -1,7 +1,22 @@
 # 📦 Deployment
 
-certish is deployed on [ZEIT Now](http://now.sh).
+certish is deployed with [ZEIT Now](https://zeit.co/docs).
+
+## Prepare
 
 1. Install the Now CLI globally with `npm i -g now`.
 2. Log into now: `now login`
-3. Deploy the application by running `now` from within the project directory. `now --prod` will deploy to production.
+
+## Deploy
+
+### Automatic
+
+Pushing changes to a git branch will create a new staging deployment at `https://certish.xxxxx.now.sh`.
+
+Pushing to the `master` branch will deploy to the production environment.
+
+### Manual
+
+`now` will create a staging deployment when run within the project directory.
+
+`now --prod` will deploy to the production environment.

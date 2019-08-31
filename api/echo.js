@@ -15,9 +15,10 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-const test = (req, res) => {
-    const { name = 'World' } = req.query;
-    res.send(`Hello ${name}!`);
+module.exports = (req, res) => {
+    res.json({
+        body: req.body,
+        query: req.query,
+        cookies: req.cookies
+    });
 };
-
-export default test;

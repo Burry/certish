@@ -1,6 +1,6 @@
 # 🛠 Development
 
-certish requires an environment with [Node.js](https://nodejs.org), and we recommend using [Yarn](https://yarnpkg.com/docs/install) to install npm dependencies and run development scripts.
+certish requires an environment with [Node.js](https://nodejs.org), and we recommend using [Yarn](https://yarnpkg.com/docs/install) to install npm dependencies and run development scripts. Once you have node, you'll want to install the [Now CLI](https://zeit.co/docs) with `npm i -g now`.
 
 ## npm Dependencies
 
@@ -10,9 +10,9 @@ Inside the project directory, install npm dependencies with `yarn` or `yarn inst
 
 In the project directory you can run the following development scripts. If you prefer to use npm, then substitute `yarn` for `npm run`.
 
-### `yarn dev`
+### `now dev`
 
-Deploys AWS backend resources and starts the development server.
+Starts the development server and local Lambda API.
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
@@ -20,7 +20,7 @@ The page will reload if you make edits. You will also see any lint errors in the
 
 ### `yarn build`
 
-Deploys AWS backend resources and builds the app for production.
+Builds the app for production.
 
 ### `yarn start`
 
@@ -43,3 +43,7 @@ See the Create React App section about [running tests](https://facebook.github.i
 ### `yarn coverage`
 
 Runs tests and generates a coverage report. Your browser will open the report once it's ready.
+
+### `yarn deploy`
+
+An alias for [`now`](Deployment.md). Deployes the app on ZEIT Now.
