@@ -9,11 +9,11 @@
     <a href="https://codecov.io/gh/Burry/certish" target="_blank" alt="Code Coverage">
         <img src="https://codecov.io/gh/Burry/certish/branch/master/graph/badge.svg" />
     </a>
-    <a href="https://app.fossa.io/projects/custom%2B9027%2Fgithub.com%2FBurry%2FSigmaker/refs/branch/master/6c59a662142ae9b00acc82d2463165688d861213/browse/dependencies" target="_blank" alt="Dependency Status">
+    <a href="https://app.fossa.com/projects/custom%2B9027%2Fgithub.com%2FBurry%2Fcertish/refs/branch/master/dff2ce0a3f018065f83fa68504f7f04acae9fd7d/browse/dependencies" target="_blank" alt="Dependency Status">
         <img src="https://david-dm.org/Burry/certish.svg" />
     </a>
-    <a href="https://github.com/Burry/certish/blob/master/COPYING" alt="GPL-3.0 License">
-        <img src="https://img.shields.io/github/license/Burry/certish.svg?color=%234c1" />
+    <a href="https://www.gnu.org/licenses/gpl-3.0" alt="License: GPL v3">
+        <img src="https://img.shields.io/badge/License-GPLv3-blue.svg" />
     </a>
 </h1>
 
@@ -23,4 +23,4 @@ The public key infrastructure for the public
 
 ## [⚖️ License](https://app.fossa.io/projects/custom%2B9027%2Fgithub.com%2FBurry%2FSigmaker)
 
-[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B9027%2Fcertish.svg?type=large)](https://app.fossa.com/projects/custom%2B9027%2Fcertish?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B9027%2Fgithub.com%2FBurry%2Fcertish.svg?type=large)](https://app.fossa.com/projects/custom%2B9027%2Fgithub.com%2FBurry%2Fcertish?ref=badge_large)

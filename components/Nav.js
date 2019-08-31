@@ -21,13 +21,8 @@ const Nav = () => (
         style={{ zIndex: '1' }}
     >
         <Link href="/">
-            <Anchor>
-                <Image
-                    src="/static/img/logo.svg"
-                    a11yTitle="certish"
-                    alt="certish"
-                    height="32"
-                />
+            <Anchor alt="certish">
+                <Image src="/static/img/logo.svg" height="32" />
             </Anchor>
         </Link>
         <Box tag="nav" direction="row" justify="between">

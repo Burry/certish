@@ -5,7 +5,7 @@ version: 2
 cli:
   server: https://app.fossa.com
   fetcher: custom
-  project: certish
+  project: https://Burry@github.com/Burry/certish.git
 analyze:
   modules:
   - name: .
