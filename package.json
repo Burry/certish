@@ -4,7 +4,12 @@
     "description": "The public key infrastructure for the public",
     "homepage": "https://certi.sh",
     "repository": "github:Burry/certish",
-    "author": "Grant Burry <grant@burry.me> (https://grantburry.com)",
+    "bugs": {
+        "url": "https://burry.dev/certish/labels/bug"
+    },
+    "contributors": [
+        "Grant Burry <grant@burry.me> (https://grantburry.com)"
+    ],
     "license": "GPL-3.0+",
     "keywords": [
         "pki",
@@ -21,8 +26,11 @@
         "test:ci": "npm-run-all 'test:cover --ci {@}' --",
         "open-coverage": "open-cli coverage/lcov-report/index.html",
         "coverage": "npm-run-all 'test:cover {@}' open-coverage --",
-        "dev": "next dev",
-        "build": "next build",
+        "deploy-backend": "amplify push",
+        "next-build": "next build",
+        "build": "npm-run-all deploy-backend next build",
+        "start-dev": "next dev",
+        "dev": "npm-run-all deploy-backend start-dev",
         "start": "next start"
     },
     "engines": {
@@ -189,7 +197,9 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged"
+            "pre-commit": "lint-staged",
+            "post-checkout": "amplify env checkout $(git rev-parse --abbrev-ref HEAD)",
+            "post-pull": "amplify env pull $(git rev-parse --abbrev-ref HEAD)"
         }
     },
     "lint-staged": {
@@ -229,6 +239,7 @@
         "jest": "^24.9.0",
         "lint-staged": "^9.2.5",
         "npm-run-all": "^4.1.5",
+        "open-cli": "^5.0.0",
         "prettier": "^1.18.2",
         "prop-types": "^15.7.2"
     }

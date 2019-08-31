@@ -24,6 +24,9 @@ yarn-error.log*
 # editors
 .vscode
 
+# manually ignore team-provider-info.json for privacy
+# amplify/team-provider-info.json
+
 #amplify
 amplify/\#current-cloud-backend
 amplify/.config/local-*
