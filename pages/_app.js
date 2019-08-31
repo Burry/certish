@@ -21,7 +21,7 @@ import { Helmet } from 'react-helmet';
 import { Box, Grommet } from 'grommet';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import 'sanitize.css';
+// import 'sanitize.css';
 import '../components/styles/metropolis.css';
 // import 'typeface-metropolis';
 

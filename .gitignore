@@ -15,6 +15,7 @@
 # misc
 .DS_Store
 .env*
+/certificates/
 
 # debug
 npm-debug.log*

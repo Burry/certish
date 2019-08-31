@@ -49,7 +49,7 @@ const Footer = () => (
             |
             <FooterAnchor
                 label="GitHub"
-                href="https://github.com/Burry/certish"
+                href="https://github.com/certish/certish"
                 target="_blank"
                 rel="noopener noreferrer"
             />

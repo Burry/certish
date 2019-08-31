@@ -3,9 +3,9 @@
     "version": "0.1.0",
     "description": "The public key infrastructure for the public",
     "homepage": "https://certi.sh",
-    "repository": "github:Burry/certish",
+    "repository": "github:certish/certish",
     "bugs": {
-        "url": "https://burry.dev/certish/labels/bug"
+        "url": "https://github.com/certish/certish/labels/bug"
     },
     "contributors": [
         "Grant Burry <grant@burry.me> (https://grantburry.com)"
@@ -27,15 +27,11 @@
         "test:ci": "npm-run-all 'test:cover --ci {@}' --",
         "open-coverage": "open-cli coverage/lcov-report/index.html",
         "coverage": "npm-run-all 'test:cover {@}' open-coverage --",
-        "deploy-backend": "amplify push",
-        "build-frontend": "next build",
-        "build": "npm-run-all deploy-backend build-frontend",
-        "now-build": "npm-run-all build",
-        "start-dev": "next dev",
-        "dev": "npm-run-all deploy-backend start-dev",
-        "now-dev": "npm-run-all dev",
+        "build": "next build",
+        "dev": "next dev",
         "start": "next start",
-        "export": "next export"
+        "export": "next export",
+        "deploy": "now"
     },
     "engines": {
         "node": ">=8"
@@ -222,7 +218,7 @@
         }
     },
     "lint-staged": {
-        "!(.next|out|coverage|node_modules)/**/!(*test|aws-exports).js": [
+        "!(.next|out|coverage|node_modules)/**/!(*test).js": [
             "prettier --write",
             "eslint --fix",
             "git add --force"
@@ -234,13 +230,11 @@
     },
     "dependencies": {
         "@zeit/next-css": "^1.0.1",
-        "aws-amplify": "^1.1.36",
         "grommet": "^2.7.7",
         "next": "9.0.5",
         "react": "16.9.0",
         "react-dom": "16.9.0",
         "react-helmet": "^5.2.1",
-        "sanitize.css": "^11.0.0",
         "styled-components": "^4.3.2",
         "typeface-metropolis": "^0.0.74"
     },
