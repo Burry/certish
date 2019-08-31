@@ -29,7 +29,7 @@ The public key infrastructure for the public
 
 ### [⚖️ License](https://app.fossa.com/projects/custom%2B9027%2Fgithub.com%2FBurry%2Fcertish)
 
-**© 2019 certish.**
+**Copyright © 2019 certish.**
 
 certish is free software: you can redistribute it and/or modify it under the terms of the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0) as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 

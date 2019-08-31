@@ -28,7 +28,7 @@
         "coverage": "npm-run-all 'test:cover {@}' open-coverage --",
         "deploy-backend": "amplify push",
         "next-build": "next build",
-        "build": "npm-run-all deploy-backend next build",
+        "build": "npm-run-all deploy-backend next-build",
         "start-dev": "next dev",
         "dev": "npm-run-all deploy-backend start-dev",
         "start": "next start"
