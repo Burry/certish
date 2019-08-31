@@ -10,7 +10,7 @@ script:
     - npm install -g codecov
     - yarn
     - yarn lint
-    - yarn test
+    - yarn test:ci
     - yarn build
     - fossa init
     - fossa analyze
