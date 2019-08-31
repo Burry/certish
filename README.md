@@ -13,7 +13,7 @@
         <!-- <img src="https://img.shields.io/codecov/c/gh/certish/certish" /> -->
         <img src="https://codecov.io/gh/certish/certish/branch/master/graph/badge.svg" />
     </a>
-    <a href="https://app.fossa.com/projects/custom%2B9027%2Fgithub.com%2FBurry%2Fcertish/refs/branch/master/dff2ce0a3f018065f83fa68504f7f04acae9fd7d/browse/dependencies" target="_blank" alt="Dependency Status">
+    <a href="https://app.fossa.com/projects/custom%2B9027%2Fgithub.com%2Fcertish%2Fcertish/refs/branch/master/aa63ffc6bc6c343bac00d27edcdecb48f9412385/browse/dependencies" target="_blank" alt="Dependency Status">
         <img src="https://david-dm.org/certish/certish.svg" />
     </a>
     <a href="https://www.gnu.org/licenses/gpl-3.0" alt="License: GPL v3">
@@ -35,4 +35,4 @@ certish is free software: you can redistribute it and/or modify it under the ter
 
 certish is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0) for more details.
 
-[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B9027%2Fgithub.com%2FBurry%2Fcertish.svg?type=large)](https://app.fossa.com/projects/custom%2B9027%2Fgithub.com%2FBurry%2Fcertish?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B9027%2Fgithub.com%2Fcertish%2Fcertish.svg?type=large)](https://app.fossa.com/projects/custom%2B9027%2Fgithub.com%2Fcertish%2Fcertish?ref=badge_large)
