@@ -4,15 +4,16 @@ certish requires an environment with [Node.js](https://nodejs.org), and we recom
 
 ## npm Dependencies
 
-Inside the project directory, install npm dependencies with `yarn` or `yarn install`. If you prefer to use npm, then run `npm install`.
+Inside the project directory, install npm dependencies with `yarn` or `yarn install`. If you prefer to install with npm then run `npm install`.
 
 ## AWS Amplify
 
 certish uses the [AWS Amplify Framework](https://aws.amazon.com/amplify/framework) to interface with backend cloud resources provisioned by the [AWS Amplify CLI](https://aws-amplify.github.io/docs/cli-toolchain/quickstart). You will need to install, configure, and initialize the Amplify CLI before building, running, or making backend changes to the project.
 
 1. Install the Amplify CLI globally: `npm install -g @aws-amplify/cli`
-2. Run `amplify configure`. You will be prompted to sign in to the AWS Console and create a new IAM user for the Amplify CLI. If your team has already provided you with Amplify IAM credentials, then close the browser prompts and input your IAM access key and secret access key.
-3. Run `amplify init` from within the project directory. Confirm that you want to use an existing environment, and then select the environment name that matches your checked-out git branch.
+2. Run `amplify configure`. You will be prompted to sign in to the AWS Console and create a new IAM user for the Amplify CLI. If your team has already provided you with Amplify IAM credentials, then close the browser prompts and input your IAM access key ID and secret access key.
+3. If your team has existing Amplify environments deployed, obtain `team-provider-info.json` from them and place it in the `amplify` directory before proceeding. AWS [recommends] leaving this file out of public repositories, and so if you're using one you can remove `team-provider-info.json` from `.gitignore` and commit it freely. Otherwise, you will need an external process to keep this file privately in sync among your team after every time the file is updated by the Amplify CLI.
+4. Run `amplify init` from within the project directory. Confirm that you want to use an existing environment, and then select the environment name that matches your checked-out git branch.
 
 ### Deployment
 
@@ -20,7 +21,7 @@ certish uses the [AWS Amplify Framework](https://aws.amazon.com/amplify/framewor
 
 ### Environments & Teams
 
-Please familiarize yourself with the [concepts and workflow](https://aws-amplify.github.io/docs/cli-toolchain/quickstart#environments--teams) of using the Amplify CLI as a team. Team-members should work within their own [sandbox environments](https://aws-amplify.github.io/docs/cli-toolchain/quickstart#team-members-working-on-their-own-sandbox-environments-recommended) when making changes to backend resources.
+Please familiarize yourself with the [concepts and workflow](https://aws-amplify.github.io/docs/cli-toolchain/quickstart#environments--teams) of using the Amplify CLI as a team. When making changes to backend resources, team members should work within their own [sandbox environments](https://aws-amplify.github.io/docs/cli-toolchain/quickstart#team-members-working-on-their-own-sandbox-environments-recommended) before deploying to a shared/production environment.
 
 ## Scripts
 
