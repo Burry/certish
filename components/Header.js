@@ -1,5 +1,6 @@
 /*
- * This file is part of certish. Copyright © 2019 certish.
+ * certish
+ * Copyright © 2019 certish
  *
  * certish is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by

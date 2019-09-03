@@ -1,5 +1,6 @@
 /*
- * This file is part of certish. Copyright © 2019 certish.
+ * certish
+ * Copyright © 2019 certish
  *
  * certish is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -15,10 +16,12 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-module.exports = (req, res) => {
-    res.json({
+import micro from 'micro';
+
+export default micro((req, res) => {
+    res.status(200).json({
         body: req.body,
         query: req.query,
         cookies: req.cookies
     });
-};
+});

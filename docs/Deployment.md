@@ -2,10 +2,12 @@
 
 certish is deployed with [ZEIT Now](https://zeit.co/docs).
 
+[Our team (you'll need to be signed in) »](https://zeit.co/certish)
+
 ## Prepare
 
 1. Install the Now CLI globally with `npm i -g now`.
-2. Log into now: `now login`
+2. [Create a free ZEIT account](https://zeit.co/signup) if you don't have one already, then sign in to the Now CLI: `now login`
 
 ## Deploy
 

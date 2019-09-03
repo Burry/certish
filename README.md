@@ -16,12 +16,12 @@
     <a href="https://app.fossa.com/projects/custom%2B9027%2Fgithub.com%2Fcertish%2Fcertish/refs/branch/master/aa63ffc6bc6c343bac00d27edcdecb48f9412385/browse/dependencies" target="_blank" alt="Dependency Status">
         <img src="https://david-dm.org/certish/certish.svg" />
     </a>
-    <a href="https://www.gnu.org/licenses/gpl-3.0" alt="License: GPL v3">
+    <a href="https://www.gnu.org/licenses/gpl-3.0" alt="License: GPL v3+">
         <img src="https://img.shields.io/badge/license-GPL--3.0-orange" />
     </a>
 </h1>
 
-The public key infrastructure for the public
+A free digital notary: the public key infrastructure for the public
 
 ### [➡️ Try it out](https://certi.sh)
 
@@ -29,9 +29,9 @@ The public key infrastructure for the public
 
 ### [📦 Deployment](docs/Deployment.md)
 
-### [⚖️ License](https://www.gnu.org/licenses/gpl-3.0)
+### [⚖️ License (GPL-3.0+)](https://www.gnu.org/licenses/gpl-3.0)
 
-**Copyright © 2019 certish.**
+#### Copyright © 2019 certish
 
 certish is free software: you can redistribute it and/or modify it under the terms of the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0) as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 

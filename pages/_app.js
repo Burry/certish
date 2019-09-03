@@ -1,5 +1,6 @@
 /*
- * This file is part of certish. Copyright © 2019 certish.
+ * certish
+ * Copyright © 2019 certish
  *
  * certish is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
@@ -27,7 +28,8 @@ import '../components/styles/full-height.css';
 
 const title = 'certish';
 const hostname = 'https://certi.sh';
-const description = 'The public key infrastructure for the public';
+const description =
+    'A free digital notary: the public key infrastructure for the public';
 const brandColor = '#f00';
 const textSelectionStyle = `background:${brandColor};color:#FFF;`;
 const theme = {
