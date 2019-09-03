@@ -35,17 +35,19 @@ const friendlyError = statusCode => {
 };
 
 const Error = ({ statusCode }) => (
-    <Box
-        justify="center"
-        animation="fadeIn"
-        fill
-        pad={{ vertical: 'large', horizontal: 'medium' }}
-    >
-        <Helmet title="Error" />
-        <Heading alignSelf="center" textAlign="center">
-            {friendlyError(statusCode) || 'An error occurred'}
-        </Heading>
-    </Box>
+    <>
+        <Box
+            justify="center"
+            animation="fadeIn"
+            fill
+            pad={{ vertical: 'large', horizontal: 'medium' }}
+        >
+            <Helmet title="Error" />
+            <Heading alignSelf="center" textAlign="center">
+                {friendlyError(statusCode) || 'An error occurred'}
+            </Heading>
+        </Box>
+    </>
 );
 
 Error.propTypes = {

@@ -18,7 +18,7 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Well from '../components/Well';
+import Well from '../src/components/Well';
 
 const Verify = () => (
     <>

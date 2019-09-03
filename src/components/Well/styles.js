@@ -16,16 +16,38 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-/* eslint-env jest */
+import css from 'styled-jsx/css';
 
-import React from 'react';
-import renderer from 'react-test-renderer';
-import Component from '../../components/Well';
+const styles = css.global`
+    body,
+    html,
+    #__next,
+    .full-height {
+        height: 100%;
+    }
 
-describe('<Footer />', () => {
-    it('matches snapshot', () => {
-        const component = renderer.create(<Component verb="sign" />);
-        const tree = component.toJSON();
-        expect(tree).toMatchSnapshot();
-    });
-});
+    #main-content,
+    .well-container,
+    .well {
+        height: 100%;
+        justify-content: center;
+    }
+
+    .well.active {
+        background: #f00;
+        color: #fff;
+    }
+
+    .input-btn-active,
+    .identity-dropdown-btn-active {
+        color: #fff;
+    }
+
+    .identity-widget {
+        position: absolute;
+        top: 81px;
+        left: 24px;
+    }
+`;
+
+export default styles;

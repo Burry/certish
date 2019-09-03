@@ -230,13 +230,17 @@
     },
     "dependencies": {
         "@zeit/next-css": "^1.0.1",
+        "classnames": "^2.2.6",
         "grommet": "^2.7.7",
         "micro": "^9.3.4",
         "next": "9.0.5",
         "react": "16.9.0",
         "react-dom": "16.9.0",
+        "react-dropzone": "^10.1.8",
         "react-helmet": "^5.2.1",
-        "styled-components": "^4.3.2"
+        "styled-components": "^4.3.2",
+        "styled-jsx": "^3.2.2",
+        "unique-names-generator": "^3.0.0"
     },
     "devDependencies": {
         "babel-eslint": "^10.0.3",

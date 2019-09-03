@@ -25,11 +25,13 @@ const TightHeading = props => (
 );
 
 const Me = () => (
-    <Box pad={{ horizontal: 'medium' }}>
-        <Helmet title="Me" />
-        <TightHeading>Me</TightHeading>
-        <TightHeading level="2">Signatures</TightHeading>
-    </Box>
+    <>
+        <Box pad={{ horizontal: 'medium', bottom: 'large' }}>
+            <Helmet title="Me" />
+            <TightHeading>Me</TightHeading>
+            <TightHeading level="2">Signatures</TightHeading>
+        </Box>
+    </>
 );
 
 export default Me;

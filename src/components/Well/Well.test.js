@@ -20,11 +20,11 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Component from '../../components/Footer';
+import Component from './Well';
 
 describe('<Footer />', () => {
     it('matches snapshot', () => {
-        const component = renderer.create(<Component />);
+        const component = renderer.create(<Component verb="sign" />);
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();
     });

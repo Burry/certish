@@ -20,9 +20,9 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Component from '../../components/Header';
+import Component from './Footer';
 
-describe('<Header />', () => {
+describe('<Footer />', () => {
     it('matches snapshot', () => {
         const component = renderer.create(<Component />);
         const tree = component.toJSON();

@@ -1,0 +1,6 @@
+{
+    "name": "Well",
+    "version": "0.0.0",
+    "private": true,
+    "main": "./Well.js"
+}

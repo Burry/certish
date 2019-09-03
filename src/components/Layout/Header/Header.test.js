@@ -16,15 +16,16 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
+/* eslint-env jest */
+
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import Well from '../src/components/Well';
+import renderer from 'react-test-renderer';
+import Component from './Header';
 
-const Sign = () => (
-    <>
-        <Helmet title="Sign" />
-        <Well verb="sign" />
-    </>
-);
-
-export default Sign;
+describe('<Header />', () => {
+    it('matches snapshot', () => {
+        const component = renderer.create(<Component />);
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+});

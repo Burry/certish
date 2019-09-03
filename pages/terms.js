@@ -17,15 +17,18 @@
  */
 
 import React from 'react';
+
 import { Helmet } from 'react-helmet';
 import { Box, Heading, Text } from 'grommet';
 
 const Terms = () => (
-    <Box pad={{ horizontal: 'medium' }}>
-        <Helmet title="Terms" />
-        <Heading margin={{ top: 'none', bottom: 'small' }}>Terms</Heading>
-        <Text>TBD</Text>
-    </Box>
+    <>
+        <Box pad={{ horizontal: 'medium', bottom: 'large' }}>
+            <Helmet title="Terms" />
+            <Heading margin={{ top: 'none', bottom: 'small' }}>Terms</Heading>
+            <Text>TBD</Text>
+        </Box>
+    </>
 );
 
 export default Terms;

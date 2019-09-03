@@ -20,11 +20,8 @@ import React from 'react';
 import { func, shape } from 'prop-types';
 import NextApp from 'next/app';
 import { Helmet } from 'react-helmet';
-import { Box, Grommet, Text } from 'grommet';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import '../components/styles/metropolis.css';
-import '../components/styles/full-height.css';
+import Layout from '../src/components/Layout';
+import '../src/fonts/metropolis.css';
 
 const title = 'certish';
 const hostname = 'https://certi.sh';
@@ -32,27 +29,53 @@ const description =
     'A free digital notary: the public key infrastructure for the public';
 const brandColor = '#f00';
 const textSelectionStyle = `background:${brandColor};color:#FFF;`;
-const theme = {
-    global: {
-        colors: {
-            brand: brandColor,
-            focus: '#f55'
-        },
-        font: {
-            family:
-                'Metropolis, "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-            size: '16px',
-            height: '20px'
+
+const defaultLayoutProps = {
+    fill: false,
+    theme: {
+        global: {
+            colors: {
+                brand: '#f00',
+                focus: '#f55'
+            },
+            font: {
+                family:
+                    'Metropolis, "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+                size: '16px',
+                height: '20px'
+            }
         }
     }
 };
 
 class App extends NextApp {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            layoutProps: defaultLayoutProps
+        };
+
+        this.setLayout = this.setLayout.bind(this);
+    }
+
+    setLayout(layoutProps) {
+        this.setState(state => ({
+            layoutProps: {
+                ...state.layoutProps,
+                ...layoutProps
+            }
+        }));
+    }
+
     render() {
-        const { Component, pageProps } = this.props;
+        const { Component, pageProps: _pageProps } = this.props;
+        const { layoutProps } = this.state;
+
+        const pageProps = { ..._pageProps, setLayout: this.setLayout };
 
         return (
-            <Grommet theme={theme} className="full-height">
+            <>
                 <Helmet
                     defaultTitle={title}
                     titleTemplate={`%s » ${title}`}
@@ -112,32 +135,10 @@ class App extends NextApp {
                         {`body,html{margin:0;padding:0;}::selection{${textSelectionStyle}}::-moz-selection{${textSelectionStyle}}`}
                     </style>
                 </Helmet>
-                <Box
-                    as="noscript"
-                    fill
-                    background="brand"
-                    alignContent="center"
-                    pad="small"
-                >
-                    <Text textAlign="center" weight="bold">
-                        Please enable JavaScript to use certish.
-                    </Text>
-                </Box>
-                <Box fill flex className="expand-height">
-                    <Header />
-                    <Box
-                        fill
-                        pad={{
-                            bottom: 'large'
-                        }}
-                        className="expand-height"
-                        role="main"
-                    >
-                        <Component {...pageProps} />
-                    </Box>
-                    <Footer />
-                </Box>
-            </Grommet>
+                <Layout {...layoutProps}>
+                    <Component {...pageProps} />
+                </Layout>
+            </>
         );
     }
 }
