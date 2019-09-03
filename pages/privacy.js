@@ -18,6 +18,7 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import Link from 'next/link';
 import { Box, Heading, Paragraph } from 'grommet';
 
 const TightHeading = props => (
@@ -35,7 +36,8 @@ const Privacy = () => (
                 sign or verify data, the contents of that data never leave your
                 browser.
             </WideParagraph>
-            <TightHeading level={2}>Signing</TightHeading>
+            <TightHeading level={2}>How certish works</TightHeading>
+            <TightHeading level={3}>Signing</TightHeading>
             <WideParagraph>
                 When you sign data with certish, this is what happens:
             </WideParagraph>
@@ -67,7 +69,7 @@ const Privacy = () => (
                     you.
                 </li>
             </ol>
-            <TightHeading level={2}>Verification</TightHeading>
+            <TightHeading level={3}>Verification</TightHeading>
             <WideParagraph>When you verify data with certish:</WideParagraph>
             <ol>
                 <li>Your browser computes a crypographic hash of the data.</li>
@@ -86,6 +88,11 @@ const Privacy = () => (
                     verify the signature.
                 </li>
             </ol>
+            <TightHeading level={2}>Bird Watching</TightHeading>
+            <WideParagraph>
+                We take good care of our pet canary.{' '}
+                <Link href="/canary">Isn&apos;t he cute?</Link>
+            </WideParagraph>
         </Box>
     </>
 );

@@ -40,7 +40,7 @@ const Error = ({ statusCode }) => (
             justify="center"
             animation="fadeIn"
             fill
-            pad={{ vertical: 'large', horizontal: 'medium' }}
+            pad={{ bottom: 'medium', horizontal: 'medium' }}
         >
             <Helmet title="Error" />
             <Heading alignSelf="center" textAlign="center">
