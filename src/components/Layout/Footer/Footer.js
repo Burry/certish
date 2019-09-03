@@ -16,7 +16,6 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import React from 'react';
 import Link from 'next/link';
 import { Anchor, Box, Text } from 'grommet';
 
@@ -37,7 +36,15 @@ const Footer = () => (
         style={{ zIndex: '1' }}
     >
         <FooterText>
-            &copy; {new Date().getFullYear()} certish. All rights reserved.
+            &copy; {new Date().getFullYear()} certish. Licensed under{' '}
+            <Anchor
+                label="GPL v3"
+                href="https://www.gnu.org/licenses/gpl-3.0"
+                target="_blank"
+                rel="noopener noreferrer"
+                color="dark-4"
+            />
+            .
         </FooterText>
         <FooterText textAlign="end" as="div">
             <Link href="/privacy">

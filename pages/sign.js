@@ -16,7 +16,6 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import React from 'react';
 import { Helmet } from 'react-helmet';
 import Well from '../src/components/Well';
 

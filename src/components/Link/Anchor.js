@@ -16,14 +16,24 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import { Helmet } from 'react-helmet';
-import Well from '../src/components/Well';
+import { string, shape } from 'prop-types';
+import { withRouter } from 'next/router';
+import { Anchor as GrommetAnchor } from 'grommet';
+import urlParams from './urlParams';
 
-const Verify = () => (
-    <>
-        <Helmet title="Verify" />
-        <Well verb="verify" />
-    </>
-);
+const Anchor = ({ path, preserveParams, router, ...rest }) => {
+    const href = urlParams(path, router, preserveParams);
+    return <GrommetAnchor href={href} {...rest} />;
+};
 
-export default Verify;
+Anchor.propTypes = {
+    path: string.isRequired,
+    preserveParams: string,
+    router: shape({}).isRequired
+};
+
+Anchor.defaultProps = {
+    preserveParams: undefined
+};
+
+export default withRouter(Anchor);

@@ -16,8 +16,6 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import React from 'react';
-
 import { Helmet } from 'react-helmet';
 import { Box, Heading, Text } from 'grommet';
 

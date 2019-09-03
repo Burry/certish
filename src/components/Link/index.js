@@ -16,14 +16,6 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import { Helmet } from 'react-helmet';
-import Well from '../src/components/Well';
-
-const Verify = () => (
-    <>
-        <Helmet title="Verify" />
-        <Well verb="verify" />
-    </>
-);
-
-export default Verify;
+export { default as Anchor } from './Anchor';
+export { default as AnchorLink } from './AnchorLink';
+export { default as AnchorButton } from './AnchorButton';

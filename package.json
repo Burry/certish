@@ -240,7 +240,8 @@
         "react-helmet": "^5.2.1",
         "styled-components": "^4.3.2",
         "styled-jsx": "^3.2.2",
-        "unique-names-generator": "^3.0.0"
+        "unique-names-generator": "^3.0.0",
+        "url-search-params": "^1.1.0"
     },
     "devDependencies": {
         "babel-eslint": "^10.0.3",

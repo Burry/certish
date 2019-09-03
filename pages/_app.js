@@ -16,7 +16,6 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import React from 'react';
 import { func, shape } from 'prop-types';
 import NextApp from 'next/app';
 import { Helmet } from 'react-helmet';

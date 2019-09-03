@@ -16,7 +16,6 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import React from 'react';
 import Link from 'next/link';
 import { Anchor, Box, Image } from 'grommet';
 

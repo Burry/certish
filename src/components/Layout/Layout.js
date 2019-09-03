@@ -16,7 +16,6 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import React from 'react';
 import { func, node, shape, oneOfType, arrayOf } from 'prop-types';
 import { Box, Grommet, Text } from 'grommet';
 import _Header from './Header';
