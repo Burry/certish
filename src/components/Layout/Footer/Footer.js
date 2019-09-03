@@ -16,14 +16,14 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import Link from 'next/link';
-import { Anchor, Box, Text } from 'grommet';
+import { Box, Text } from 'grommet';
+import { AnchorLink } from '../../Link';
 
 const FooterText = React.forwardRef((props, ref) => (
     <Text ref={ref} color="dark-4" size="small" {...props} />
 ));
 const FooterAnchor = React.forwardRef((props, ref) => (
-    <Anchor ref={ref} color="dark-4" margin="small" {...props} />
+    <AnchorLink ref={ref} color="dark-4" margin="small" {...props} />
 ));
 
 const Footer = () => (
@@ -37,7 +37,7 @@ const Footer = () => (
     >
         <FooterText>
             &copy; {new Date().getFullYear()} certish. Licensed under{' '}
-            <Anchor
+            <AnchorLink
                 label="GPL v3"
                 href="https://www.gnu.org/licenses/gpl-3.0"
                 target="_blank"
@@ -47,13 +47,9 @@ const Footer = () => (
             .
         </FooterText>
         <FooterText textAlign="end" as="div">
-            <Link href="/privacy">
-                <FooterAnchor label="privacy" />
-            </Link>
+            <FooterAnchor href="/privacy" label="privacy" />
             |
-            <Link href="/terms">
-                <FooterAnchor label="terms" />
-            </Link>
+            <FooterAnchor href="/terms" label="terms" />
             |
             <FooterAnchor
                 label="code"

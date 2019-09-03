@@ -22,26 +22,14 @@ import Link from 'next/link';
 import { Anchor } from 'grommet';
 import { queryParams } from './urlParams';
 
-const AnchorLink = ({
-    path,
-    preserveParams,
-    route,
-    router,
-    params,
-    ...rest
-}) => {
+const AnchorLink = ({ path, preserveParams, router, params, ...rest }) => {
     const query = queryParams(router, preserveParams);
     return (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <Link
-            route={route}
             href={{
                 pathname: path || rest.href,
                 query
-            }}
-            params={{
-                ...query,
-                ...params
             }}
             passHref
         >
@@ -53,15 +41,13 @@ const AnchorLink = ({
 AnchorLink.propTypes = {
     path: string,
     preserveParams: shape({}),
-    route: string,
-    router: string,
+    router: shape({}),
     params: string
 };
 
 AnchorLink.defaultProps = {
     path: undefined,
     preserveParams: undefined,
-    route: undefined,
     router: undefined,
     params: undefined
 };

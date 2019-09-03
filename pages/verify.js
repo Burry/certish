@@ -16,14 +16,24 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
+import { string } from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { uniqueNamesGenerator } from 'unique-names-generator';
 import Well from '../src/components/Well';
 
-const Verify = () => (
+const Verify = ({ pseudonym }) => (
     <>
         <Helmet title="Verify" />
-        <Well verb="verify" />
+        <Well verb="verify" pseudonym={pseudonym} />
     </>
 );
+
+Verify.getInitialProps = async () => ({
+    pseudonym: uniqueNamesGenerator({ length: 2, separator: '-' })
+});
+
+Verify.propTypes = {
+    pseudonym: string.isRequired
+};
 
 export default Verify;

@@ -16,8 +16,8 @@
  * along with certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import Link from 'next/link';
-import { Anchor, Box, Image } from 'grommet';
+import { Box, Image } from 'grommet';
+import { AnchorLink } from '../../Link';
 
 const links = ['sign', 'verify', 'me'];
 
@@ -30,16 +30,17 @@ const Nav = () => (
         pad="medium"
         style={{ zIndex: '1' }}
     >
-        <Link href="/">
-            <Anchor alt="certish">
-                <Image src="/static/img/logo.svg" height="32" />
-            </Anchor>
-        </Link>
+        <AnchorLink href="/" alt="certish">
+            <Image src="/static/img/logo.svg" height="32" />
+        </AnchorLink>
         <Box tag="nav" direction="row" justify="between" role="navigation">
             {links.map(link => (
-                <Link key={`nav-link-${link}`} href={`/${link}`}>
-                    <Anchor margin="small">{link}</Anchor>
-                </Link>
+                <AnchorLink
+                    label={link}
+                    key={`nav-link-${link}`}
+                    href={`/${link}`}
+                    margin="small"
+                />
             ))}
         </Box>
     </Box>

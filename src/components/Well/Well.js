@@ -19,15 +19,12 @@
 import React, { useState, useCallback } from 'react';
 import { string } from 'prop-types';
 import classNames from 'classnames';
-import { uniqueNamesGenerator } from 'unique-names-generator';
 import { useDropzone } from 'react-dropzone';
 import { Box, Button, DropButton, Heading, Text } from 'grommet';
 import styles from './styles';
 
-const Well = ({ verb }) => {
-    const [identity] = useState({
-        username: uniqueNamesGenerator({ length: 2, separator: '-' })
-    });
+const Well = ({ verb, pseudonym }) => {
+    const [identity] = useState({ username: pseudonym });
     const [files, setFiles] = useState([]);
 
     const onDrop = useCallback(
@@ -65,7 +62,7 @@ const Well = ({ verb }) => {
                     }
                     dropAlign={{ top: 'bottom', left: 'left' }}
                     dropContent={
-                        <Box pad="small" border="light-2">
+                        <Box pad="small" border="none" elevation="none">
                             <div>{identity.username}</div>
                             <div>+ New identity</div>
                         </Box>
@@ -122,7 +119,8 @@ const Well = ({ verb }) => {
 };
 
 Well.propTypes = {
-    verb: string.isRequired
+    verb: string.isRequired,
+    pseudonym: string.isRequired
 };
 
 export default Well;

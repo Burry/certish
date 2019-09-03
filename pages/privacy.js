@@ -18,8 +18,8 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Link from 'next/link';
-import { Anchor, Box, Heading, Paragraph } from 'grommet';
+import { Box, Heading, Paragraph } from 'grommet';
+import { AnchorLink } from '../src/components/Link';
 
 const TightHeading = props => (
     <Heading margin={{ vertical: 'small' }} {...props} />
@@ -92,9 +92,7 @@ const Privacy = () => (
             <WideParagraph>
                 We take good care of our pet canary, but we could always use
                 your help to look after him.{' '}
-                <Link href="/canary">
-                    <Anchor label="Isn't he cute?" />
-                </Link>
+                <AnchorLink href="/canary" label="Isn't he cute?" />
             </WideParagraph>
         </Box>
     </>
