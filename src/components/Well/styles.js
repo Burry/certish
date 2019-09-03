@@ -38,9 +38,13 @@ const styles = css.global`
         color: #fff;
     }
 
+    .identity-dropdown-btn {
+        color: #f00 !important;
+    }
+
     .input-btn-active,
-    .identity-dropdown-btn-active {
-        color: #fff;
+    .identity-dropdown-btn.active {
+        color: #fff !important;
     }
 
     .identity-widget {

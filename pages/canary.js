@@ -18,7 +18,7 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Box, Heading } from 'grommet';
+import { Box, Heading, Paragraph } from 'grommet';
 
 const Canary = () => (
     <Box
@@ -26,11 +26,14 @@ const Canary = () => (
         animation="fadeIn"
         fill
         pad={{ bottom: 'medium', horizontal: 'medium' }}
+        textAlign="center"
     >
         <Helmet title="The canary's alive!" />
-        <Heading alignSelf="center" textAlign="center">
-            Look at our pet canary!
-        </Heading>
+        <Heading alignSelf="center">Look at our pet canary!</Heading>
+        <Paragraph fill alignSelf="center">
+            Isn&apos;t he cute? We think we do a good job of keeping an eye on
+            him, but we could always use your help.
+        </Paragraph>
         <Box pad="large" alignContent="center" alignSelf="center">
             <img src="/static/img/canary.svg" height="200" alt="Canary" />
         </Box>

@@ -56,7 +56,7 @@ const Well = ({ verb }) => {
             </style>
             <Box className="identity-widget">
                 <DropButton
-                    color={isDragActive ? 'light-1' : 'dark-2'}
+                    color={isDragActive ? 'light-1' : 'brand'}
                     label={
                         <>
                             <b>Identity</b>&nbsp;
@@ -70,7 +70,10 @@ const Well = ({ verb }) => {
                             <div>+ New identity</div>
                         </Box>
                     }
-                    className={isDragActive && 'identity-dropdown-btn-active'}
+                    className={classNames(
+                        'identity-dropdown-btn',
+                        isDragActive && 'active'
+                    )}
                 />
             </Box>
             <Box
@@ -105,9 +108,11 @@ const Well = ({ verb }) => {
                             }}
                         />
                     </Box>
-                    <Text size="small">
+                    <Text size="small" textAlign="center">
                         {files.length
-                            ? `${files.length} files ready`
+                            ? `${files.length} file${
+                                  files.length !== 1 ? 's' : ''
+                              } ready`
                             : 'The contents of your data are never sent to certish.'}
                     </Text>
                 </Box>

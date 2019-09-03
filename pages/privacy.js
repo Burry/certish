@@ -90,7 +90,8 @@ const Privacy = () => (
             </ol>
             <TightHeading level={2}>Bird Watching</TightHeading>
             <WideParagraph>
-                We take good care of our pet canary.{' '}
+                We take good care of our pet canary, but we could always use
+                your help to look after him.{' '}
                 <Link href="/canary">Isn&apos;t he cute?</Link>
             </WideParagraph>
         </Box>
