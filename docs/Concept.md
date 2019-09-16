@@ -4,7 +4,7 @@ This document describes the technical, user experience, and business concepts of
 
 ## Elevator Pitch
 
-certish is a free, public, digital notary: a trusted third-party that acts as an arbiter/storehouse of identity, applying enterprise-grade crypto standards to sharing data, so that everyone can take ownership of their identity on the web, know where their data comes from, and prove that it hasn't been tampered with.
+certish is a free, public, digital notary: a trusted third-party that acts as an arbiter and storehouse of identity, applying enterprise-grade crypto standards to sharing data, so that everyone can take ownership of their identity on the web, know where their data comes from, and prove that it hasn't been tampered with.
 
 ## Benefit
 
