@@ -25,6 +25,8 @@ A free digital notary: the public key infrastructure for the public
 
 ### [➡️ Try it out](https://certi.sh)
 
+### [💡 Concept](docs/Concept.md)
+
 ### [🛠 Development](docs/Development.md)
 
 ### [📦 Deployment](docs/Deployment.md)
