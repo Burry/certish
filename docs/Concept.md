@@ -1,6 +1,6 @@
 # 💡Concept
 
-This document describes the technical and business concepts of certish and is intended to bootstrap discussion of the platform to plan a business and development strategy. Nothing in this document is presently set in stone.
+This document describes the technical, user experience, and business concepts of certish and is intended to bootstrap discussion of the platform to plan a business and development strategy. Nothing in this document is presently set in stone.
 
 ## Elevator Pitch
 
