@@ -18,3 +18,6 @@ script:
     - codecov
 after_success:
     - fossa test
+notifications:
+    slack:
+        secure: L/8lsA8Gaav/Elwr/w/Jw8nWwY+fA2xlcgyTjKn9sOvyyJLMW8ymiUVtprn+SyqSVDs32DCCf2O4MGF2w4kRr3b9Rxn0N1eMDlSIJb66k+44tnHWdfvMI9JjVZeFrbTAkCIOSC8/q2acogqJwdy5KVQuBNpoHNIqY0PWemEyGWiubf2y5/Br7O3sBsQx4DdDq0f7h6cyTlYmIaHEk0cACnUOej9AIQMNKZK+ilvwkWyZse8WyI/ZDk8hYN+DbgidBKgUF8ZjB5n9vOgJamDy2g+1iVlsORfMBokLEjInKBA5qMdQufek80pq4+umOb6q+j2H0zxyevH2P8g87OYKNCZCMtHBAi1CsCipCp5+ReXfEzOZqJYhDYh6J3QrDAvijrhJzo0S1dJmOVGfkfjnenBALKGTBY7O9DQCoGe7C/3VtDN2QqLEmQkejle8K+a8+N8pX/hfjbIqn9rGMilHtbi8NEUZtFPgNR2sZC/mqAzdD5DEezu/Hcl6Ke+b+eg7nVizFnkWF8qOjJzaOE/rVDtMmA+PBRSZrEyR/g4wzPMA6U61Tote1maJYRMGCU1ZQ+D3osvX/LVruKqDo6nEiGYdrq/pDNFzEY7My6ojOngg5LBMr9OetadP1WIIbJrYWNB/h7zgcIC0zbcL+8lOA6jS3nQrOTXs3qw6jAwhNSA=
