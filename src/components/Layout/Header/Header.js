@@ -31,7 +31,7 @@ const Nav = () => (
         style={{ zIndex: '1' }}
     >
         <AnchorLink href="/" alt="certish">
-            <Image src="/static/img/logo.svg" height="32" />
+            <Image src="/img/logo.svg" height="32" />
         </AnchorLink>
         <Box tag="nav" direction="row" justify="between" role="navigation">
             {links.map(link => (

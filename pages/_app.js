@@ -92,7 +92,7 @@ class App extends NextApp {
                     <meta name="msapplication-TileColor" content={brandColor} />
                     <meta
                         name="msapplication-TileImage"
-                        content="/static/icons/mstile-144x144.png"
+                        content="/icons/mstile-144x144.png"
                     />
                     {/* Open Graph */}
                     <meta property="og:type" content="website" />
@@ -103,7 +103,7 @@ class App extends NextApp {
                     <meta property="og:image:height" content="630" />
                     <meta
                         property="og:image"
-                        content={`${hostname}/static/open-graph.png`}
+                        content={`${hostname}/open-graph.png`}
                     />
                     {[16, 32].map(size => {
                         const dimensions = `${size}x${size}`;
@@ -113,22 +113,22 @@ class App extends NextApp {
                                 rel="icon"
                                 type="image/png"
                                 sizes={dimensions}
-                                href={`/static/icons/favicon-${dimensions}.png`}
+                                href={`/icons/favicon-${dimensions}.png`}
                             />
                         );
                     })}
                     <link
                         rel="apple-touch-icon"
                         sizes="300x300"
-                        href="/static/icons/apple-touch-icon.png"
+                        href="/icons/apple-touch-icon.png"
                     />
                     <link
                         rel="mask-icon"
-                        href="/static/icons/safari-pinned-tab.svg"
+                        href="/icons/safari-pinned-tab.svg"
                         color={brandColor}
                     />
                     {/* PWA web manifest */}
-                    <link rel="manifest" href="/static/site.webmanifest" />
+                    <link rel="manifest" href="/site.webmanifest" />
                     {/* Text selection style */}
                     <style>
                         {`body,html{margin:0;padding:0;}::selection{${textSelectionStyle}}::-moz-selection{${textSelectionStyle}}`}

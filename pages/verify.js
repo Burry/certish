@@ -18,7 +18,11 @@
 
 import { string } from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { uniqueNamesGenerator } from 'unique-names-generator';
+import {
+    uniqueNamesGenerator,
+    adjectives,
+    animals
+} from 'unique-names-generator';
 import Well from '../src/components/Well';
 
 const Verify = ({ pseudonym }) => (
@@ -29,7 +33,11 @@ const Verify = ({ pseudonym }) => (
 );
 
 Verify.getInitialProps = async () => ({
-    pseudonym: uniqueNamesGenerator({ length: 2, separator: '-' })
+    pseudonym: uniqueNamesGenerator({
+        dictionaries: [adjectives, animals],
+        length: 2,
+        separator: '-'
+    })
 });
 
 Verify.propTypes = {

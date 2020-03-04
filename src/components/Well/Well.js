@@ -21,7 +21,8 @@ import { string } from 'prop-types';
 import classNames from 'classnames';
 import { useDropzone } from 'react-dropzone';
 import { Box, Button, DropButton, Heading, Text } from 'grommet';
-import styles from './styles';
+import globalStyles from './global-styles';
+import './well.scss';
 
 const Well = ({ verb, pseudonym }) => {
     const [identity] = useState({ username: pseudonym });
@@ -33,27 +34,27 @@ const Well = ({ verb, pseudonym }) => {
         },
         [setFiles]
     );
-    const { getRootProps, getInputProps, isDragActive } = useDropzone({
-        onDrop
+    const {
+        getRootProps,
+        getInputProps,
+        isDragActive,
+        open: openFilePicker
+    } = useDropzone({
+        onDrop,
+        noClick: true,
+        noKeyboard: true
     });
 
-    const InputButton = props => (
-        <Button
-            primary={!isDragActive}
-            color={isDragActive ? 'light-1' : 'brand'}
-            className={classNames(isDragActive && 'input-btn-active')}
-            {...props}
-        />
-    );
+    const InputButton = props => <Button primary color="brand" {...props} />;
 
     return (
         <div className="well-container">
             <style jsx global>
-                {styles}
+                {globalStyles}
             </style>
             <Box className="identity-widget">
                 <DropButton
-                    color={isDragActive ? 'light-1' : 'brand'}
+                    color="brand"
                     label={
                         <>
                             <b>Identity</b>&nbsp;
@@ -62,32 +63,26 @@ const Well = ({ verb, pseudonym }) => {
                     }
                     dropAlign={{ top: 'bottom', left: 'left' }}
                     dropContent={
-                        <Box pad="small" border="none" elevation="none">
+                        <Box pad="small" elevation="none">
                             <div>{identity.username}</div>
                             <div>+ New identity</div>
                         </Box>
                     }
-                    className={classNames(
-                        'identity-dropdown-btn',
-                        isDragActive && 'active'
-                    )}
+                    className="identity-dropdown-btn"
                 />
             </Box>
             <Box
                 fill
                 alignContent="center"
                 textAlign="center"
-                className={classNames('well', isDragActive && 'active')}
+                className="well"
                 {...getRootProps()}
             >
                 <input {...getInputProps()} />
-
-                <Box alignSelf="center">
-                    <Heading as="div" margin="none">
+                <Box alignSelf="center" className="content">
+                    <Heading as="div" margin="none" textAlign="center">
                         {isDragActive ? 'Release' : 'Drop'} to {verb}
                     </Heading>
-                </Box>
-                <Box alignSelf="center">
                     <Box
                         direction="row"
                         fill
@@ -95,9 +90,16 @@ const Well = ({ verb, pseudonym }) => {
                         alignSelf="center"
                         justify="between"
                         margin={{ vertical: 'large' }}
+                        className={classNames(
+                            'uploadRow',
+                            isDragActive && 'fadeOut'
+                        )}
                     >
                         <Text>or </Text>
-                        <InputButton label="choose file" />
+                        <InputButton
+                            label="choose file"
+                            onClick={openFilePicker}
+                        />
                         <InputButton
                             label="paste text"
                             onClick={e => {
@@ -113,6 +115,22 @@ const Well = ({ verb, pseudonym }) => {
                             : 'The contents of your data are never sent to certish.'}
                     </Text>
                 </Box>
+                {isDragActive && (
+                    <>
+                        <div className={classNames('hexagon', 'topHex')}>
+                            <div />
+                        </div>
+                        {[-3, -2, -1, 0].map(delay => (
+                            <div
+                                className={classNames('hexagon', 'pulse')}
+                                style={{ animationDelay: `${delay}s` }}
+                                key={`pulse-${delay}`}
+                            >
+                                <div />
+                            </div>
+                        ))}
+                    </>
+                )}
             </Box>
         </div>
     );

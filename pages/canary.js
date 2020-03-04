@@ -34,7 +34,7 @@ const Canary = () => (
             him, but we could always use your help.
         </Paragraph>
         <Box pad="large" alignContent="center" alignSelf="center">
-            <img src="/static/img/canary.svg" height="200" alt="Canary" />
+            <img src="/img/canary.svg" height="200" alt="Canary" />
         </Box>
     </Box>
 );

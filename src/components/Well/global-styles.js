@@ -18,7 +18,7 @@
 
 import css from 'styled-jsx/css';
 
-const styles = css.global`
+const globalStyles = css.global`
     body,
     html,
     #__next,
@@ -32,26 +32,6 @@ const styles = css.global`
         height: 100%;
         justify-content: center;
     }
-
-    .well.active {
-        background: #f00;
-        color: #fff;
-    }
-
-    .identity-dropdown-btn {
-        color: #f00 !important;
-    }
-
-    .input-btn-active,
-    .identity-dropdown-btn.active {
-        color: #fff !important;
-    }
-
-    .identity-widget {
-        position: absolute;
-        top: 81px;
-        left: 24px;
-    }
 `;
 
-export default styles;
+export default globalStyles;
