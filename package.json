@@ -1,11 +1,11 @@
 {
     "name": "certish",
     "version": "0.1.0",
-    "description": "A free digital notary: the public key infrastructure for the public",
+    "description": "The free notary for the web",
     "homepage": "https://certi.sh",
-    "repository": "github:certish/certish",
+    "repository": "github:Certish/Certish",
     "bugs": {
-        "url": "https://github.com/certish/certish/labels/bug"
+        "url": "https://github.com/Certish/Certish/labels/bug"
     },
     "contributors": [
         "Grant Burry <grant@burry.me> (https://grantburry.com)"
@@ -30,8 +30,7 @@
         "build": "next build",
         "dev": "next dev",
         "start": "next start",
-        "export": "next export",
-        "deploy": "now"
+        "export": "next export"
     },
     "engines": {
         "node": ">=8"
@@ -66,6 +65,7 @@
             "prettier/react"
         ],
         "env": {
+            "browser": true,
             "node": true,
             "es6": true,
             "commonjs": true
@@ -168,6 +168,18 @@
         },
         "settings": {
             "import/resolver": {
+                "alias": {
+                    "map": [
+                        "~",
+                        "./src/"
+                    ],
+                    "extensions": [
+                        ".js",
+                        ".jsx",
+                        ".ts",
+                        ".tsx"
+                    ]
+                },
                 "node": {
                     "extensions": [
                         ".js",
@@ -229,10 +241,18 @@
         ]
     },
     "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.27",
+        "@fortawesome/pro-duotone-svg-icons": "^5.12.1",
+        "@fortawesome/pro-light-svg-icons": "^5.12.1",
+        "@fortawesome/pro-regular-svg-icons": "^5.12.1",
+        "@fortawesome/pro-solid-svg-icons": "^5.12.1",
+        "@fortawesome/react-fontawesome": "^0.1.9",
         "@zeit/next-css": "^1.0.1",
         "@zeit/next-sass": "^1.0.1",
+        "asn1js": "latest",
         "classnames": "^2.2.6",
         "grommet": "^2.11.1",
+        "isomorphic-base64": "^1.0.2",
         "micro": "^9.3.4",
         "next": "9.2.2",
         "next-compose-plugins": "^2.2.0",
@@ -240,6 +260,7 @@
         "next-optimized-images": "^2.5.5",
         "node-sass": "^4.13.1",
         "pkijs": "^2.1.86",
+        "pvutils": "^1.0.17",
         "react": "16.13.0",
         "react-dom": "16.13.0",
         "react-dropzone": "^10.2.1",
@@ -258,6 +279,7 @@
         "eslint": "^6.8.0",
         "eslint-config-airbnb": "^18.0.1",
         "eslint-config-prettier": "^6.10.0",
+        "eslint-import-resolver-alias": "^1.1.2",
         "eslint-plugin-import": "^2.20.1",
         "eslint-plugin-jsx-a11y": "^6.2.3",
         "eslint-plugin-notice": "^0.8.9",
@@ -267,13 +289,11 @@
         "imagemin-gifsicle": "^7.0.0",
         "imagemin-mozjpeg": "^8.0.0",
         "imagemin-optipng": "^7.1.0",
-        "imagemin-pngquant": "^8.0.0",
         "imagemin-svgo": "^7.1.0",
         "jest": "^25.1.0",
         "jest-transform-css": "^2.0.0",
         "lint-staged": "^10.0.8",
         "lqip-loader": "^2.2.0",
-        "next-purgecss": "^3.1.2",
         "npm-run-all": "^4.1.5",
         "open-cli": "^5.0.0",
         "prettier": "^1.19.1",

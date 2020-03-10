@@ -1,0 +1,51 @@
+type User {
+    id: ID!
+    username: String!
+    name: String!
+    email: AWSEmail
+    phone: AWSPhone
+    identities: [Identity!]!
+}
+
+type Certificate {
+    id: ID!
+    # ToBeSigned (TBS) part of the certificate
+    tbs: String!
+    version: String!
+    serial: String!
+    extensions: [String]!
+    # Algorithm identifier for the algorithm used by the CA to sign the certificate
+    signature: String!
+    signatureAlgorithm: String!
+    signatureValue: String!
+    # Entity that has signed and issued the certificate
+    issuer: String!
+    issuerUniqueID: String!
+    # Validity range
+    notBefore: String!
+    notAfter: String!
+    # Entity associated with the public key stored in the subject public key field
+    subject: String!
+    subjectUniqueID: String!
+    subjectPublicKeyInfo: String!
+    identity: Identity!
+}
+
+type Identity {
+    id: ID!
+    path: String!
+    name: String!
+    note: String!
+    createdAt: AWSDate!
+    certificates: [Certificate!]!
+    signatures: [Signature]!
+}
+
+type Signature {
+    id: ID!
+    path: String!
+    signature: String!
+    hash: String!
+    algorithm: String!
+    certs: [Certificate!]!
+}

@@ -1,32 +1,32 @@
 /*
- * certish
- * Copyright © 2019 certish
+ * Certish
+ * Copyright © 2019 Certish
  *
- * certish is free software: you can redistribute it and/or modify it
+ * Certish is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * certish is distributed in the hope that it will be useful, but
+ * Certish is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with certish. If not, see <https://www.gnu.org/licenses/>.
+ * along with Certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
+const path = require('path');
 const withPlugins = require('next-compose-plugins');
 const withCSS = require('@zeit/next-css');
 const withSass = require('@zeit/next-sass');
-const withPurgeCSS = require('next-purgecss');
 const withOptimizedImages = require('next-optimized-images');
 const withFonts = require('next-fonts');
 
 const nextPlugins = [
     withCSS,
     withSass,
-    withPurgeCSS,
+    // withPurgeCSS,
     withOptimizedImages,
     withFonts
 ];
@@ -36,8 +36,6 @@ const nextConfig = {
     cssLoaderOptions: {
         url: false
     },
-    // next-purgecss
-    purgeCssEnabled: ({ dev }) => !dev,
     // next-optimized-images
     optimizeImagesInDev: true,
     responsive: {
@@ -48,7 +46,15 @@ const nextConfig = {
     enableSvg: true,
     // webpack
     webpack(config) {
-        return config;
+        const patchedConfig = { ...config };
+        patchedConfig.resolve = {
+            ...patchedConfig.resolve,
+            alias: {
+                ...patchedConfig.resolve.alias,
+                '~': path.resolve(__dirname, 'src')
+            }
+        };
+        return patchedConfig;
     }
 };
 

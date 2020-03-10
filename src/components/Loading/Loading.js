@@ -16,16 +16,28 @@
  * along with Certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-/* eslint-env jest */
+import { bool, string } from 'prop-types';
+import { Box, Text } from 'grommet';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinnerThird } from '@fortawesome/pro-duotone-svg-icons';
 
-import React from 'react';
-import renderer from 'react-test-renderer';
-import Page from '../../pages/privacy';
+const Loading = ({ loading, pad, ...props }) =>
+    loading ? (
+        <Box fill justify="center" pad={pad} {...props}>
+            <Text color="brand" alignSelf="center">
+                <FontAwesomeIcon icon={faSpinnerThird} size="3x" spin />
+            </Text>
+        </Box>
+    ) : null;
 
-describe('/privacy', () => {
-    it('matches snapshot', () => {
-        const page = renderer.create(<Page />);
-        const tree = page.toJSON();
-        expect(tree).toMatchSnapshot();
-    });
-});
+Loading.propTypes = {
+    loading: bool,
+    pad: string
+};
+
+Loading.defaultProps = {
+    loading: true,
+    pad: 'large'
+};
+
+export default Loading;

@@ -12,10 +12,10 @@
 }
 
 .hexagon {
-    width: 50%;
+    width: calc(max(50vh, 50vw));
     position: absolute;
     top: 57.735% / 2;
-    left: 25%;
+    left: calc(max(50vh, 50vw) / 2);
 
     &::after {
         content: '';
@@ -46,6 +46,12 @@
         &::after {
             transform: rotateZ(-60deg);
         }
+    }
+}
+
+@media (orientation: portrait) {
+    .hexagon {
+        left: calc(min(50vh, 50vw) - max(50vh, 50vw) / 2);
     }
 }
 

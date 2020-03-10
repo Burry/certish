@@ -16,16 +16,22 @@
  * along with Certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-/* eslint-env jest */
+// import { string } from 'prop-types';
+import { Helmet } from 'react-helmet';
 
-import React from 'react';
-import renderer from 'react-test-renderer';
-import Page from '../../pages/privacy';
+const Identity = () => (
+    <>
+        <Helmet title="Identity" />
+        Identity Page
+    </>
+);
 
-describe('/privacy', () => {
-    it('matches snapshot', () => {
-        const page = renderer.create(<Page />);
-        const tree = page.toJSON();
-        expect(tree).toMatchSnapshot();
-    });
-});
+Identity.getInitialProps = async () => {
+    return {};
+};
+
+// Signature.propTypes = {
+//     pseudonym: string.isRequired
+// };
+
+export default Identity;

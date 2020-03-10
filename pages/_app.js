@@ -1,50 +1,37 @@
 /*
- * certish
- * Copyright © 2019 certish
+ * Certish
+ * Copyright © 2019 Certish
  *
- * certish is free software: you can redistribute it and/or modify it
+ * Certish is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * certish is distributed in the hope that it will be useful, but
+ * Certish is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with certish. If not, see <https://www.gnu.org/licenses/>.
+ * along with Certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
 import { func, shape } from 'prop-types';
 import NextApp from 'next/app';
 import { Helmet } from 'react-helmet';
-import Layout from '../src/components/Layout';
+import Layout from '~/components/Layout';
+import theme from '~/theme';
 import '../src/fonts/metropolis.css';
 
-const title = 'certish';
+const title = 'Certish';
 const hostname = 'https://certi.sh';
-const description =
-    'A free digital notary: the public key infrastructure for the public';
+const description = 'The free notary for the web';
 const brandColor = '#f00';
 const textSelectionStyle = `background:${brandColor};color:#FFF;`;
 
 const defaultLayoutProps = {
     fill: false,
-    theme: {
-        global: {
-            colors: {
-                brand: '#f00',
-                focus: '#f55'
-            },
-            font: {
-                family:
-                    'Metropolis, "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-                size: '16px',
-                height: '20px'
-            }
-        }
-    }
+    theme
 };
 
 class App extends NextApp {

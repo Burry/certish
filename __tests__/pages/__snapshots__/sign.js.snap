@@ -7,7 +7,7 @@ exports[`/sign matches snapshot 1`] = `
   <h1
     className="StyledHeading-sc-1rdh4aw-0 WNcgo"
   >
-    Drop to 
+    Drop to
     sign
   </h1>
   <div
@@ -16,7 +16,7 @@ exports[`/sign matches snapshot 1`] = `
     <span
       className="StyledText-sc-1sadyjn-0 fWSbXS"
     >
-      Or 
+      Or
     </span>
     <button
       className="StyledButton-sc-323bzc-0 hsEINM"
@@ -45,7 +45,7 @@ exports[`/sign matches snapshot 1`] = `
     className="StyledText-sc-1sadyjn-0 gNZQxf"
     size="small"
   >
-    The contents of your data are never sent to certish.
+    The contents of your data are never sent to Certish.
   </span>
 </div>
 `;

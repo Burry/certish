@@ -12,7 +12,7 @@ exports[`/privacy matches snapshot 1`] = `
   <p
     className="StyledParagraph-tbetod-0 eGFPdN"
   >
-    We believe that your data is your business. When you send data to certish for signing or verification, that data never leaves your browser.
+    We believe that your data is your business. When you send data to Certish for signing or verification, that data never leaves your browser.
   </p>
   <h2
     className="StyledHeading-sc-1rdh4aw-0 hnqdVE"
@@ -22,7 +22,7 @@ exports[`/privacy matches snapshot 1`] = `
   <p
     className="StyledParagraph-tbetod-0 eGFPdN"
   >
-    When you sign data with certish, this is what happens:
+    When you sign data with Certish, this is what happens:
   </p>
   <ol>
     <li>
@@ -32,7 +32,7 @@ exports[`/privacy matches snapshot 1`] = `
       Your browser uses your target data and the private key to compute a digital signature.
     </li>
     <li>
-      We upload that signature to our servers, so that when you share your data, others can use certish to verify that it came from you and hasn't been tampered with. If you're signing a file, we'll also upload the filename and MIME type to our servers, so that you and the file's recipients can more easily identify it. The contents of your data are never transmitted to certish.
+      We upload that signature to our servers, so that when you share your data, others can use Certish to verify that it came from you and hasn't been tampered with. If you're signing a file, we'll also upload the filename and MIME type to our servers, so that you and the file's recipients can more easily identify it. The contents of your data are never transmitted to Certish.
     </li>
     <li>
       We'll generate a pseydonym and public profile profile for you, so that when others verify your data, they'll be able to see where it came from. A cookie will be stored in your browser, so that if you choose to sign in or claim a persistent profile, your keys and signatures will stay with you.
@@ -46,14 +46,14 @@ exports[`/privacy matches snapshot 1`] = `
   <p
     className="StyledParagraph-tbetod-0 eGFPdN"
   >
-    When you verify data with certish:
+    When you verify data with Certish:
   </p>
   <ol>
     <li>
       Your browser computes a crypographic hash of the data.
     </li>
     <li>
-      We upload that hash to our servers. If we haven't seen the hash before, that means that the data hasn't been signed by certish, and we'll let you know that we couldn't verify it. Otherwise, we'll proceed...
+      We upload that hash to our servers. If we haven't seen the hash before, that means that the data hasn't been signed by Certish, and we'll let you know that we couldn't verify it. Otherwise, we'll proceed...
     </li>
     <li>
       We send your browser the digital signature, public key, and public user profile we have on file for your target data.

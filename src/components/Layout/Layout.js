@@ -1,19 +1,19 @@
 /*
- * certish
- * Copyright © 2019 certish
+ * Certish
+ * Copyright © 2019 Certish
  *
- * certish is free software: you can redistribute it and/or modify it
+ * Certish is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * certish is distributed in the hope that it will be useful, but
+ * Certish is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with certish. If not, see <https://www.gnu.org/licenses/>.
+ * along with Certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
 import { func, node, shape, oneOfType, arrayOf } from 'prop-types';
@@ -31,7 +31,7 @@ const Layout = ({ Header, Footer, children, theme }) => (
             pad="small"
         >
             <Text textAlign="center" weight="bold">
-                Please enable JavaScript to use certish.
+                Please enable JavaScript to use Certish.
             </Text>
         </Box>
         <Box fill flex className="full-height">

@@ -1,54 +1,57 @@
 /*
- * certish
- * Copyright © 2019 certish
+ * Certish
+ * Copyright © 2019 Certish
  *
- * certish is free software: you can redistribute it and/or modify it
+ * Certish is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * certish is distributed in the hope that it will be useful, but
+ * Certish is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with certish. If not, see <https://www.gnu.org/licenses/>.
+ * along with Certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import React, { useState, useCallback } from 'react';
-import { string } from 'prop-types';
+import React, { useState } from 'react';
+import { string, func } from 'prop-types';
 import classNames from 'classnames';
 import { useDropzone } from 'react-dropzone';
 import { Box, Button, DropButton, Heading, Text } from 'grommet';
+import Loading from '../Loading';
 import globalStyles from './global-styles';
 import './well.scss';
 
-const Well = ({ verb, pseudonym }) => {
-    const [identity] = useState({ username: pseudonym });
-    const [files, setFiles] = useState([]);
+const InputButton = props => (
+    <Button primary color="brand" margin="xsmall" {...props} />
+);
 
-    const onDrop = useCallback(
-        acceptedFiles => {
-            setFiles(_files => [..._files, ...acceptedFiles]);
-        },
-        [setFiles]
-    );
+const Well = ({ verb, pseudonym, handleFiles }) => {
+    const [identity] = useState({ username: pseudonym });
+    const [loading, setLoading] = useState(false);
+
+    const handleDrop = async files => {
+        setLoading(true);
+        await handleFiles(files);
+        setLoading(false);
+    };
+
     const {
         getRootProps,
         getInputProps,
         isDragActive,
         open: openFilePicker
     } = useDropzone({
-        onDrop,
+        onDrop: handleDrop,
         noClick: true,
         noKeyboard: true
     });
 
-    const InputButton = props => <Button primary color="brand" {...props} />;
-
     return (
-        <div className="well-container">
+        <Box fill justify="center">
             <style jsx global>
                 {globalStyles}
             </style>
@@ -73,49 +76,49 @@ const Well = ({ verb, pseudonym }) => {
             </Box>
             <Box
                 fill
-                alignContent="center"
+                align="center"
+                justify="center"
                 textAlign="center"
                 className="well"
-                {...getRootProps()}
+                {...(loading ? {} : getRootProps())}
             >
-                <input {...getInputProps()} />
-                <Box alignSelf="center" className="content">
-                    <Heading as="div" margin="none" textAlign="center">
-                        {isDragActive ? 'Release' : 'Drop'} to {verb}
-                    </Heading>
-                    <Box
-                        direction="row"
-                        fill
-                        align="center"
-                        alignSelf="center"
-                        justify="between"
-                        margin={{ vertical: 'large' }}
-                        className={classNames(
-                            'uploadRow',
-                            isDragActive && 'fadeOut'
-                        )}
-                    >
-                        <Text>or </Text>
-                        <InputButton
-                            label="choose file"
-                            onClick={openFilePicker}
-                        />
-                        <InputButton
-                            label="paste text"
-                            onClick={e => {
-                                e.preventDefault();
-                            }}
-                        />
-                    </Box>
-                    <Text size="small" textAlign="center">
-                        {files.length
-                            ? `${files.length} file${
-                                  files.length !== 1 ? 's' : ''
-                              } ready`
-                            : 'The contents of your data are never sent to certish.'}
-                    </Text>
+                {!loading && <input {...getInputProps()} />}
+                <Box className="content">
+                    {loading ? (
+                        <Loading />
+                    ) : (
+                        <>
+                            <Heading as="div" margin="none" textAlign="center">
+                                {isDragActive ? 'Release' : 'Drop'} to {verb}
+                            </Heading>
+                            <Box
+                                direction="row"
+                                fill
+                                align="center"
+                                alignSelf="center"
+                                justify="center"
+                                margin={{ vertical: 'large' }}
+                                className={classNames(
+                                    'uploadRow',
+                                    isDragActive && 'fadeOut'
+                                )}
+                            >
+                                <Text margin="xsmall">or</Text>
+                                <InputButton
+                                    label="choose file"
+                                    onClick={openFilePicker}
+                                />
+                                {/* <InputButton
+                                    label="paste text"
+                                    onClick={e => {
+                                        e.preventDefault();
+                                    }}
+                                /> */}
+                            </Box>
+                        </>
+                    )}
                 </Box>
-                {isDragActive && (
+                {(loading || isDragActive) && (
                     <>
                         <div className={classNames('hexagon', 'topHex')}>
                             <div />
@@ -132,13 +135,14 @@ const Well = ({ verb, pseudonym }) => {
                     </>
                 )}
             </Box>
-        </div>
+        </Box>
     );
 };
 
 Well.propTypes = {
     verb: string.isRequired,
-    pseudonym: string.isRequired
+    pseudonym: string.isRequired,
+    handleFiles: func.isRequired
 };
 
 export default Well;

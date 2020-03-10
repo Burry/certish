@@ -1,19 +1,19 @@
 /*
- * certish
- * Copyright © 2019 certish
+ * Certish
+ * Copyright © 2019 Certish
  *
- * certish is free software: you can redistribute it and/or modify it
+ * Certish is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * certish is distributed in the hope that it will be useful, but
+ * Certish is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with certish. If not, see <https://www.gnu.org/licenses/>.
+ * along with Certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
 import React from 'react';
@@ -32,20 +32,20 @@ const Privacy = () => (
             <Helmet title="Privacy" />
             <Heading margin={{ top: 'none', bottom: 'small' }}>Privacy</Heading>
             <WideParagraph>
-                We believe that your data is your business. When you use certish
+                We believe that your data is your business. When you use Certish
                 to sign or verify data, the contents of that data never leave
                 your browser. Also, not a single lawyer has looked at this
                 Privacy Policy, and it&apos;s evolving as we develop our
                 product, so don&apos;t @ us.
             </WideParagraph>
-            <TightHeading level={2}>How certish works</TightHeading>
+            <TightHeading level={2}>How Certish works</TightHeading>
             <TightHeading level={3}>Signing</TightHeading>
             <WideParagraph>
-                When you sign data with certish, this is what happens:
+                When you sign data with Certish, this is what happens:
             </WideParagraph>
             <ol>
                 <li>
-                    If you&apos;re signed in to your certish account and have an
+                    If you&apos;re signed in to your Certish account and have an
                     associated private key, we&apos;ll securely send your
                     private key to your browser (encrypted with your password),
                     otherwise your browser will generate one for you on the fly.
@@ -63,7 +63,7 @@ const Privacy = () => (
                     also upload the filename and MIME type to our servers, so
                     that you and the file&apos;s recipients can more easily
                     identify it. The contents of your data are never transmitted
-                    to certish.
+                    to Certish.
                 </li>
                 <li>
                     If you&apos;re not using an account, we&apos;ll generate a
@@ -77,7 +77,7 @@ const Privacy = () => (
             </ol>
             <TightHeading level={4}>Creating an Account</TightHeading>
             <WideParagraph>
-                You can use certish without an account, using a
+                You can use Certish without an account, using a
                 randomly-generated pseudonym to identify your signatures. If you
                 would prefer to sign data using a custom identity and/or with
                 the same identity across multiple devices, you will need to
@@ -91,13 +91,13 @@ const Privacy = () => (
                 provider such as Apple, Google, or Facebook.
             </WideParagraph>
             <TightHeading level={3}>Verification</TightHeading>
-            <WideParagraph>When you verify data with certish:</WideParagraph>
+            <WideParagraph>When you verify data with Certish:</WideParagraph>
             <ol>
                 <li>Your browser computes a crypographic hash of the data.</li>
                 <li>
                     We upload that hash to our servers. If we haven&apos;t seen
                     the hash before, that means that the data hasn&apos;t been
-                    signed by certish, and we&apos;ll let you know that we
+                    signed by Certish, and we&apos;ll let you know that we
                     couldn&apos;t verify it. Otherwise, we&apos;ll proceed...
                 </li>
                 <li>
@@ -112,9 +112,9 @@ const Privacy = () => (
             <TightHeading level={2}>Compliance</TightHeading>
             <WideParagraph>
                 It may be required by law, litigation, and/or bullying by lawful
-                authorities with jurisdiction over certish to disclose your
+                authorities with jurisdiction over Certish to disclose your
                 personal information and/or information related to your use of
-                certish. We may also disclose information about you to these
+                Certish. We may also disclose information about you to these
                 lawful entities if we determine that it is necessary for law
                 enforcement purposes.
             </WideParagraph>

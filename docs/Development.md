@@ -1,6 +1,6 @@
 # 🛠 Development
 
-certish requires an environment with [Node.js](https://nodejs.org), and we recommend using [Yarn](https://yarnpkg.com/docs/install) to install npm dependencies and run development scripts. Once you have Node, you'll want to install the [Now CLI](https://zeit.co/docs) with `npm i -g now`.
+Certish requires an environment with [Node.js](https://nodejs.org), and we recommend using [Yarn](https://yarnpkg.com/docs/install) to install npm dependencies and run development scripts. Once you have Node, you'll want to install the [Now CLI](https://zeit.co/docs) with `npm i -g now`.
 
 ## Project npm Dependencies
 

@@ -16,16 +16,27 @@
  * along with Certish. If not, see <https://www.gnu.org/licenses/>.
  */
 
-/* eslint-env jest */
+import { atob, btoa } from 'isomorphic-base64';
 
-import React from 'react';
-import renderer from 'react-test-renderer';
-import Page from '../../pages/privacy';
+export const base64ToHex = str => {
+    const raw = atob(str);
+    let hex = '';
+    for (let i = 0; i < raw.length; i += 1) {
+        hex += raw
+            .charCodeAt(i)
+            .toString(16)
+            .padStart(2, '0');
+    }
+    return hex;
+};
 
-describe('/privacy', () => {
-    it('matches snapshot', () => {
-        const page = renderer.create(<Page />);
-        const tree = page.toJSON();
-        expect(tree).toMatchSnapshot();
-    });
-});
+export const hexToBase64 = hexStr => {
+    /* eslint-disable no-bitwise */
+    let base64 = '';
+    for (let i = 0; i < hexStr.length; i += 1) {
+        base64 += !((i - 1) & 1)
+            ? String.fromCharCode(parseInt(hexStr.substring(i - 1, i + 1), 16))
+            : '';
+    }
+    return btoa(base64);
+};
