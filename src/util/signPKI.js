@@ -534,6 +534,8 @@ export const createCMSSigned = async dataBuffer => {
     privateKey += formatPEM(window.btoa(privateKeyString));
     privateKey = `${privateKey}\r\n-----END PRIVATE KEY-----\r\n`;
 
+    console.info({ cmsSignedBuffer });
+
     const signedDataString = String.fromCharCode.apply(
         null,
         new Uint8Array(cmsSignedBuffer)
