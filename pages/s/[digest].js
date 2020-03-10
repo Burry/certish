@@ -35,7 +35,7 @@ const Signature = ({ fileName, digest, certificate, cms }) => {
             </Heading>
             <Grid
                 rows={['xsmall', 'large']}
-                columns={['medium']}
+                columns={[{ count: 'fit', size: 'medium' }]}
                 gap="small"
                 areas={[
                     { name: 'digest', start: [0, 0], end: [1, 0] },

@@ -1,0 +1,8 @@
+{
+    "version": 2,
+    "build": {
+        "env": {
+            "FONT_AWESOME_TOKEN": "@font_awesome_token"
+        }
+    }
+}
