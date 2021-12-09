@@ -254,7 +254,7 @@
         "grommet": "^2.11.1",
         "isomorphic-base64": "^1.0.2",
         "micro": "^9.3.4",
-        "next": "9.2.2",
+        "next": "11.1.3",
         "next-compose-plugins": "^2.2.0",
         "next-fonts": "^1.0.3",
         "next-optimized-images": "^2.5.5",
