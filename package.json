@@ -258,7 +258,7 @@
         "next-compose-plugins": "^2.2.0",
         "next-fonts": "^1.0.3",
         "next-optimized-images": "^2.5.5",
-        "node-sass": "^4.13.1",
+        "node-sass": "^7.0.0",
         "pkijs": "^2.1.86",
         "pvutils": "^1.0.17",
         "react": "16.13.0",
