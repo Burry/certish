@@ -301,7 +301,7 @@
         "react-addons-test-utils": "^15.6.2",
         "react-test-renderer": "^16.13.0",
         "responsive-loader": "^1.2.0",
-        "sharp": "^0.24.1",
+        "sharp": "^0.30.5",
         "svg-sprite-loader": "^4.2.1",
         "webp-loader": "^0.6.0"
     }
